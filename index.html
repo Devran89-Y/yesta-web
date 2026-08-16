@@ -73,13 +73,28 @@
     padding-top: clamp(2rem, 5vw, 3rem);
   }
 
+  .brandline {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: clamp(3rem, 9vw, 5.5rem);
+  }
+
   .brand {
     font-size: 1.1rem;
     font-weight: 700;
     letter-spacing: -.02em;
     color: var(--coral-bright);
-    margin-bottom: clamp(3rem, 9vw, 5.5rem);
   }
+
+  .lang {
+    font-size: .88rem;
+    color: var(--ink-inverse-muted);
+    text-decoration: underline;
+    text-underline-offset: .18em;
+  }
+  .lang:hover { color: var(--coral-bright); }
 
   .hero h1 {
     font-size: clamp(2.3rem, 7.5vw, 4.4rem);
@@ -276,20 +291,16 @@
     outline: 2px solid var(--coral-bright); outline-offset: 3px;
   }
   .foot-links { display: flex; flex-wrap: wrap; gap: 1.25rem; }
-  .todo {
-    border: 1px dashed var(--line-inverse);
-    border-radius: 10px;
-    padding: .9rem 1.1rem;
-    font-size: .86rem;
-    max-width: 40rem;
-  }
 </style>
 </head>
 <body>
 
 <header class="band hero">
   <div class="inner">
-    <div class="brand">Yesta</div>
+    <div class="brandline">
+      <div class="brand">Yesta</div>
+      <a class="lang" href="en/index.html" hreflang="en">English</a>
+    </div>
 
     <h1>Niemand führt ein Tagebuch durch. <span class="quiet">Du musst es auch nicht.</span></h1>
 
@@ -422,6 +433,7 @@
       <a href="datenschutz.html">Datenschutzerklärung</a>
       <a href="impressum.html">Impressum</a>
       <a href="mailto:kontakt@yesta.app">Kontakt</a>
+      <a href="en/index.html" hreflang="en">English</a>
     </div>
 
   </div>
