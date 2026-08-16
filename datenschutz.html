@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Datenschutzerklärung — Yesta</title>
+<meta name="description" content="Datenschutzerklärung der Android-App Yesta. Die App sendet nichts: kein Konto, kein Server, keine Internet-Berechtigung.">
+<link rel="stylesheet" href="doku.css">
+</head>
+<body>
+<div class="wrap">
+
+<a class="back" href="index.html">← Yesta</a>
+
+<h1>Datenschutzerklärung</h1>
+<p class="stand">Stand: 14. August 2026 · Gilt für die Android-App Yesta ab Fassung 1.12.0</p>
+
+
+<div class="kasten">
+  <p><strong>Kurz gesagt: Yesta sendet nichts.</strong> Die App fordert die
+  Berechtigung <code>INTERNET</code> gar nicht erst an — sie kann technisch keine
+  Verbindung ins Netz aufbauen. Es gibt kein Konto, keine Anmeldung, keinen
+  Server und keine Werbung.</p>
+  <p>Alle Fotos, alle Notizen und alle Auswertungen bleiben auf dem Gerät.</p>
+</div>
+
+<h2>1. Verantwortlicher</h2>
+
+<div class="anschrift">Devran Yarici
+Georg-Simler-Straße 43
+74206 Bad Wimpfen
+Deutschland
+
+E-Mail: kontakt@yesta.app</div>
+
+<h2>2. Was Yesta auf dem Gerät verarbeitet</h2>
+
+<p>Yesta liest die Fotomediathek des Geräts und legt daraus ein eigenes
+Verzeichnis in einer Datenbank an, die ausschließlich auf dem Gerät liegt.
+Darin stehen:</p>
+
+<div class="tabelle">
+<table>
+  <thead>
+    <tr><th>Art der Angabe</th><th>Woher</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Verweis auf das Foto oder Video, Aufnahmezeitpunkt, Ordnername, Dateiname</td><td>Fotomediathek des Geräts</td></tr>
+    <tr><td>Bildmaße, Kameramodell, Ausrichtung</td><td>EXIF-Angaben der Aufnahme</td></tr>
+    <tr><td>Bewertung nach Schärfe, Belichtung, Farbigkeit</td><td>von Yesta auf dem Gerät berechnet</td></tr>
+    <tr><td>Ortsname („Hamburg, Deutschland“)</td><td>siehe Abschnitt 3</td></tr>
+    <tr><td>Selbst geschriebene Notizen zu Tagen und zu einzelnen Aufnahmen</td><td>Eingabe des Nutzers</td></tr>
+    <tr><td>Selbst eingetragene besondere Tage</td><td>Eingabe des Nutzers</td></tr>
+    <tr><td>Welche Zeiträume oder Aufnahmen ausgeblendet wurden</td><td>Eingabe des Nutzers</td></tr>
+    <tr><td>Anzahl der Tage, an denen die App geöffnet wurde</td><td>von Yesta auf dem Gerät gezählt</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p><strong>Die Fotos selbst werden nicht kopiert.</strong> Yesta merkt sich
+Verweise auf die Aufnahmen und liest sie zum Anzeigen. Es entsteht keine zweite
+Sammlung.</p>
+
+<p><strong>Nichts davon wird übertragen.</strong> Die Datenbank liegt im privaten
+App-Verzeichnis und ist für andere Apps nicht lesbar. Die Systemsicherung von
+Android ist ausdrücklich abgeschaltet (<code>allowBackup="false"</code>) — es
+geht auch nichts automatisch zu Google Drive.</p>
+
+<h2>3. Die einzige Ausnahme: Ortsnamen</h2>
+
+<p>Aufnahmen enthalten häufig Koordinaten. Damit statt „53.55, 9.99“ der Name
+„Hamburg“ erscheint, gibt Yesta die Koordinate an den <strong>Ortsdienst von
+Android</strong> (<code>android.location.Geocoder</code>). Dieser Dienst gehört
+zum Betriebssystem und löst die Anfrage in der Regel über das Netz auf — je nach
+Gerät bei Google.</p>
+
+<p>Wichtig für das Verständnis: <strong>Diese Anfrage stellt nicht Yesta,
+sondern das System.</strong> Deshalb braucht die App keine Internet-Berechtigung.
+Übertragen wird allein die Koordinate, nie das Foto und nie eine Kennung des
+Nutzers.</p>
+
+<p><strong>Abschaltbar:</strong> <em>Einstellungen → Ortsnamen</em>. Danach fragt
+Yesta keine Ortsnamen mehr nach; bereits aufgelöste Namen bleiben auf dem Gerät
+stehen. Für welche Daten Google dabei verantwortlich ist, richtet sich nach den
+Datenschutzbestimmungen von Google.</p>
+
+<h2>4. Gesprochene Notizen</h2>
+
+<p>Notizen lassen sich diktieren statt tippen. Dafür fragt Yesta beim ersten
+Tippen auf das Mikrofonsymbol nach der Erlaubnis, das Mikrofon zu benutzen.</p>
+
+<p><strong>Die Erkennung läuft auf dem Gerät.</strong> Yesta benutzt
+ausschließlich den geräteeigenen Erkenner von Android. Wo dieser fehlt — auf
+Geräten vor Android 12 oder ohne heruntergeladenes Sprachpaket —
+<strong>erscheint der Mikrofonknopf gar nicht erst.</strong> Es gibt bewusst
+keinen Rückfall auf eine Erkennung über das Netz.</p>
+
+<p>Es wird keine Tonaufnahme gespeichert. Erkannt wird der Text, und der landet
+im Notizfeld, wo er vor dem Speichern noch geändert werden kann.</p>
+
+<h2>5. Was der Nutzer selbst versenden kann</h2>
+
+<p>Drei Wege führen aus der App hinaus. <strong>Alle drei löst der Nutzer aus,
+und bei allen dreien sieht er vorher, was hinausgeht.</strong></p>
+
+<ul>
+  <li><strong>Fotos und Kollagen teilen.</strong> Über die Teilen-Auswahl von
+  Android an eine App, die der Nutzer selbst wählt. Notizen gehen dabei nie mit.</li>
+
+  <li><strong>Rückmeldung und Fehlerbericht.</strong>
+  <em>Zahnrad → Wie läuft es?</em> stellt einen Text zusammen: Fassungsnummer,
+  Gerätemodell, Android-Version, die Anzahl der Tage mit Benutzung sowie die
+  Anzahl der Notizen, besonderen Tage und ausgeblendeten Aufnahmen.
+  <strong>Keine Fotos, keine Orte, keine Notiztexte.</strong> Der Text steht
+  vollständig auf dem Bildschirm, bevor irgendetwas geschieht; versendet wird er
+  vom Nutzer mit einer App seiner Wahl. Dasselbe gilt für den Absturzbericht: Er
+  liegt nach einem Absturz auf dem Gerät und wird beim nächsten Start angeboten.
+  Wer ablehnt, löscht ihn damit.</li>
+
+  <li><strong>Notizsicherung.</strong> <em>Yours → Sichern</em> schreibt
+  Tagesnotizen, Fotonotizen und besondere Tage in einen Ordner, den der Nutzer
+  selbst aussucht. Wählt er einen Ordner, der mit einem Cloud-Dienst abgeglichen
+  wird, gelangen die Notizen dorthin — das ist gewollt und liegt in seiner Hand.
+  Yesta selbst überträgt nichts.</li>
+</ul>
+
+<h2>6. Berechtigungen im Einzelnen</h2>
+
+<div class="tabelle">
+<table>
+  <thead>
+    <tr><th>Berechtigung</th><th>Wofür</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><code>READ_MEDIA_IMAGES</code>, <code>READ_MEDIA_VIDEO</code></td><td>Die Fotomediathek lesen. Das ist der Zweck der App</td></tr>
+    <tr><td><code>READ_MEDIA_VISUAL_USER_SELECTED</code></td><td>Damit die Freigabe einzelner Fotos ab Android 14 nicht als Ablehnung gilt</td></tr>
+    <tr><td><code>ACCESS_MEDIA_LOCATION</code></td><td>Ohne sie entfernt Android ab Version 10 die Koordinaten aus jedem Foto, das die App öffnet</td></tr>
+    <tr><td><code>RECORD_AUDIO</code></td><td>Nur für die gesprochene Notiz. Wird erst beim ersten Tippen auf das Mikrofon erfragt</td></tr>
+    <tr><td><code>POST_NOTIFICATIONS</code></td><td>Für die Erinnerung des Tages. Aus, bis der Nutzer zustimmt</td></tr>
+    <tr><td><code>RECEIVE_BOOT_COMPLETED</code></td><td>Damit das Widget nach einem Neustart wieder den richtigen Tag zeigt</td></tr>
+    <tr><td><code>ACCESS_NETWORK_STATE</code>, <code>WAKE_LOCK</code>, <code>FOREGROUND_SERVICE</code></td><td>Von der Systembibliothek WorkManager mitgebracht, die Durchläufe im Hintergrund steuert. Keine davon erlaubt eine Netzverbindung</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p><strong>Nicht angefordert: <code>INTERNET</code>.</strong> Ohne diese
+Berechtigung kann eine Android-App keine Netzverbindung öffnen.</p>
+
+<h2>7. Keine Werbung, keine Auswertung, keine Weitergabe</h2>
+
+<p>Yesta enthält <strong>keine</strong> Werbenetzwerke, <strong>keine</strong>
+Analysedienste, <strong>keine</strong> Absturzdienste von Dritten und
+<strong>keine</strong> Werkzeuge zur Nutzerverfolgung. Es werden keine Daten an
+Dritte weitergegeben, verkauft oder ausgewertet.</p>
+
+<p>Der Zähler unter <em>Wie läuft es?</em> zählt ausschließlich auf dem Gerät
+und übermittelt von sich aus nichts.</p>
+
+<p><strong>Unabhängig davon</strong> erhebt Google Play beim Herunterladen und
+Aktualisieren eigene Daten (etwa Installationszahlen und, sofern der Nutzer dem
+zugestimmt hat, Absturzberichte). Darauf hat Yesta keinen Einfluss; es gelten
+die Datenschutzbestimmungen von Google.</p>
+
+<h2>8. Speicherdauer und Löschen</h2>
+
+<p>Alle Daten bleiben so lange auf dem Gerät, wie die App installiert ist.</p>
+
+<p><strong>Deinstallieren löscht alles</strong>, was Yesta angelegt hat —
+Datenbank, Notizen, Einstellungen und Zähler. Die Fotos selbst sind davon nicht
+berührt; sie gehören der Fotomediathek und werden von Yesta nie verändert oder
+gelöscht.</p>
+
+<p>Einzelne Notizen lassen sich in der App löschen. Wer nur den Index neu bauen
+will, findet das unter <em>Einstellungen</em>.</p>
+
+<p>Eine Sicherungsdatei in einem selbst gewählten Ordner bleibt nach dem
+Deinstallieren bestehen — sie gehört dem Nutzer und liegt außerhalb der App.</p>
+
+<h2>9. Rechte nach DSGVO</h2>
+
+<p>Da keine personenbezogenen Daten an den Verantwortlichen übermittelt werden,
+liegen dort auch keine vor, über die Auskunft erteilt werden könnte. Die Rechte
+auf Auskunft, Berichtigung, Löschung, Einschränkung, Widerspruch und
+Datenübertragbarkeit (Art. 15–21 DSGVO) bestehen gleichwohl; für Anfragen gilt
+die Adresse in Abschnitt 1.</p>
+
+<p>Wer eine Rückmeldung oder einen Fehlerbericht geschickt hat, kann dessen
+Löschung verlangen — das ist die einzige Lage, in der überhaupt etwas vorliegen
+kann.</p>
+
+<p>Es besteht ein Beschwerderecht bei einer Datenschutz-Aufsichtsbehörde.</p>
+
+<h2>10. Kinder</h2>
+
+<p>Yesta richtet sich nicht an Kinder unter 13 Jahren und erhebt wissentlich
+keine Daten von ihnen. Da die App keine Daten überträgt, entsteht auch bei
+Benutzung durch Kinder keine Datenverarbeitung außerhalb ihres Geräts.</p>
+
+<h2>11. Änderungen</h2>
+
+<p>Ändert sich an der Verarbeitung etwas, wird diese Erklärung angepasst und das
+Datum oben aktualisiert. Wesentliche Änderungen — insbesondere eine Übertragung
+von Daten, die es heute nicht gibt — werden zusätzlich in der App angekündigt.</p>
+
+<footer>
+  <a href="index.html">Yesta</a> · <a href="impressum.html">Impressum</a>
+</footer>
+
+</div>
+</body>
+</html>
