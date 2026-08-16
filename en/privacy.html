@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy policy — Yesta</title>
+<meta name="description" content="Privacy policy of the Android app Yesta. The app sends nothing: no account, no server, no internet permission.">
+<link rel="alternate" hreflang="de" href="../datenschutz.html">
+<link rel="alternate" hreflang="en" href="privacy.html">
+<link rel="stylesheet" href="../doku.css">
+</head>
+<body>
+<div class="wrap">
+
+<a class="back" href="index.html">← Yesta</a>
+
+<h1>Privacy policy</h1>
+<p class="stand">As of 14 August 2026 · Applies to the Android app Yesta from version 1.12.0 · <a href="../datenschutz.html">Deutsch</a></p>
+
+<div class="kasten">
+  <p><strong>In short: Yesta sends nothing.</strong> The app does not even
+  request the <code>INTERNET</code> permission — it is technically unable to
+  open a network connection. There is no account, no sign-in, no server and no
+  advertising.</p>
+  <p>All photos, all notes and all analysis stay on the device.</p>
+</div>
+
+<h2>1. Controller</h2>
+
+<div class="anschrift">Devran Yarici
+Georg-Simler-Straße 43
+74206 Bad Wimpfen
+Germany
+
+Email: kontakt@yesta.app</div>
+
+<h2>2. What Yesta processes on the device</h2>
+
+<p>Yesta reads the device's photo library and builds its own index from it, in
+a database that exists only on the device. It contains:</p>
+
+<div class="tabelle">
+<table>
+  <thead>
+    <tr><th>Kind of data</th><th>Source</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Reference to the photo or video, capture time, folder name, file name</td><td>the device's photo library</td></tr>
+    <tr><td>Image dimensions, camera model, orientation</td><td>the shot's EXIF data</td></tr>
+    <tr><td>Rating by sharpness, exposure, colourfulness</td><td>computed by Yesta on the device</td></tr>
+    <tr><td>Place name (“Hamburg, Germany”)</td><td>see section 3</td></tr>
+    <tr><td>Notes you write about days and about individual shots</td><td>your input</td></tr>
+    <tr><td>Special days you enter yourself</td><td>your input</td></tr>
+    <tr><td>Which periods or shots you have hidden</td><td>your input</td></tr>
+    <tr><td>Number of days on which the app was opened</td><td>counted by Yesta on the device</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p><strong>The photos themselves are not copied.</strong> Yesta remembers
+references to the shots and reads them in order to display them. No second
+collection is created.</p>
+
+<p><strong>None of this is transmitted.</strong> The database sits in the
+private app directory and cannot be read by other apps. Android's system backup
+is explicitly switched off (<code>allowBackup="false"</code>) — nothing goes to
+Google Drive automatically either.</p>
+
+<h2>3. The one exception: place names</h2>
+
+<p>Shots often contain coordinates. So that “Hamburg” appears instead of
+“53.55, 9.99”, Yesta passes the coordinate to <strong>Android's location
+service</strong> (<code>android.location.Geocoder</code>). That service is part
+of the operating system and usually resolves the request over the network —
+depending on the device, via Google.</p>
+
+<p>Important to understand: <strong>this request is made by the system, not by
+Yesta.</strong> That is why the app needs no internet permission. Only the
+coordinate is transmitted, never the photo and never any identifier of the
+user.</p>
+
+<p><strong>Can be switched off:</strong> <em>Settings → Show places</em>. After
+that Yesta no longer looks up place names; names already resolved remain on the
+device. Which data Google is responsible for in this process is governed by
+Google's privacy policy.</p>
+
+<h2>4. Spoken notes</h2>
+
+<p>Notes can be dictated instead of typed. For this, Yesta asks for permission
+to use the microphone the first time you tap the microphone icon.</p>
+
+<p><strong>Recognition runs on the device.</strong> Yesta uses only Android's
+own on-device recogniser. Where it is missing — on devices before Android 12 or
+without a downloaded language pack — <strong>the microphone button does not
+appear at all.</strong> There is deliberately no fallback to recognition over
+the network.</p>
+
+<p>No audio recording is stored. What is recognised is the text, and it goes
+into the note field, where it can still be edited before saving.</p>
+
+<h2>5. What you can send yourself</h2>
+
+<p>Three paths lead out of the app. <strong>You start all three, and in all
+three you see beforehand what goes out.</strong></p>
+
+<ul>
+  <li><strong>Sharing photos and collages.</strong> Through Android's share
+  sheet to an app you choose yourself. Notes never go along.</li>
+
+  <li><strong>Feedback and problem report.</strong>
+  <em>Gear → How is it going?</em> assembles a text: version number, device
+  model, Android version, the number of days of use, and the number of notes,
+  special days and hidden shots. <strong>No photos, no places, no note
+  texts.</strong> The text is shown in full on the screen before anything
+  happens; you send it with an app of your choice. The same applies to the
+  crash report: after a crash it stays on the device and is offered at the next
+  start. Declining deletes it.</li>
+
+  <li><strong>Note backup.</strong> <em>Yours → Backup</em> writes day notes,
+  photo notes and special days into a folder you pick yourself. If you choose a
+  folder that is synchronised with a cloud service, the notes go there — that
+  is intended and is in your hands. Yesta itself transmits nothing.</li>
+</ul>
+
+<h2>6. Permissions in detail</h2>
+
+<div class="tabelle">
+<table>
+  <thead>
+    <tr><th>Permission</th><th>What for</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><code>READ_MEDIA_IMAGES</code>, <code>READ_MEDIA_VIDEO</code></td><td>Reading the photo library. That is the purpose of the app</td></tr>
+    <tr><td><code>READ_MEDIA_VISUAL_USER_SELECTED</code></td><td>So that sharing individual photos from Android 14 onwards does not count as a refusal</td></tr>
+    <tr><td><code>ACCESS_MEDIA_LOCATION</code></td><td>Without it, Android 10 and later strips the coordinates from every photo the app opens</td></tr>
+    <tr><td><code>RECORD_AUDIO</code></td><td>Only for the spoken note. Requested when you first tap the microphone</td></tr>
+    <tr><td><code>POST_NOTIFICATIONS</code></td><td>For the memory of the day. Off until you agree</td></tr>
+    <tr><td><code>RECEIVE_BOOT_COMPLETED</code></td><td>So the widget shows the right day again after a restart</td></tr>
+    <tr><td><code>ACCESS_NETWORK_STATE</code>, <code>WAKE_LOCK</code>, <code>FOREGROUND_SERVICE</code></td><td>Brought along by the WorkManager system library, which drives background passes. None of them allows a network connection</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p><strong>Not requested: <code>INTERNET</code>.</strong> Without this
+permission an Android app cannot open a network connection.</p>
+
+<h2>7. No advertising, no analytics, no sharing</h2>
+
+<p>Yesta contains <strong>no</strong> advertising networks, <strong>no</strong>
+analytics services, <strong>no</strong> third-party crash services and
+<strong>no</strong> user-tracking tools. No data is passed on to third parties,
+sold or analysed.</p>
+
+<p>The counter under <em>How is it going?</em> counts on the device only and
+transmits nothing by itself.</p>
+
+<p><strong>Independently of this</strong>, Google Play collects its own data
+when the app is downloaded and updated (such as install counts and, where you
+have agreed, crash reports). Yesta has no influence over that; Google's privacy
+policy applies.</p>
+
+<h2>8. Retention and deletion</h2>
+
+<p>All data stays on the device for as long as the app is installed.</p>
+
+<p><strong>Uninstalling deletes everything</strong> Yesta has created —
+database, notes, settings and counters. The photos themselves are untouched;
+they belong to the photo library and are never changed or deleted by Yesta.</p>
+
+<p>Individual notes can be deleted in the app. If you only want to rebuild the
+index, you will find that under <em>Settings</em>.</p>
+
+<p>A backup file in a folder you chose yourself remains after uninstalling — it
+belongs to you and lies outside the app.</p>
+
+<h2>9. Rights under the GDPR</h2>
+
+<p>Since no personal data is transmitted to the controller, none is held there
+that could be disclosed. The rights to access, rectification, erasure,
+restriction, objection and data portability (Art. 15–21 GDPR) exist
+nonetheless; for enquiries, the address in section 1 applies.</p>
+
+<p>Anyone who has sent feedback or a problem report can request its deletion —
+that is the only situation in which anything can be held at all.</p>
+
+<p>You have the right to lodge a complaint with a data protection supervisory
+authority.</p>
+
+<h2>10. Children</h2>
+
+<p>Yesta is not directed at children under 13 and does not knowingly collect
+data from them. Since the app transmits no data, no processing outside their
+device arises even when children use it.</p>
+
+<h2>11. Changes</h2>
+
+<p>If anything about the processing changes, this policy will be adjusted and
+the date above updated. Substantial changes — in particular any transmission of
+data, which does not exist today — will additionally be announced in the app.</p>
+
+<div class="kasten">
+  <p><strong>The German version is the authoritative one</strong> — this
+  translation is provided for convenience.
+  <a href="../datenschutz.html">Zur deutschen Fassung</a></p>
+</div>
+
+<footer>
+  <a href="index.html">Yesta</a> · <a href="imprint.html">Legal notice</a> · <a href="../datenschutz.html">Deutsch</a>
+</footer>
+
+</div>
+</body>
+</html>

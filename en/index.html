@@ -1,0 +1,445 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Yesta — your diary, written backwards</title>
+<meta name="description" content="Yesta shows you every day what you lived through on the same date in earlier years, and asks one question: what happened today? Everything stays on your phone.">
+<meta property="og:title" content="Yesta — your diary, written backwards">
+<meta property="og:description" content="One sentence a day. In a year you will be glad you wrote it.">
+<meta property="og:type" content="website">
+<link rel="alternate" hreflang="de" href="../index.html">
+<link rel="alternate" hreflang="en" href="index.html">
+<style>
+  :root {
+    --ground:        #FFFCFA;
+    --ground-deep:   #1B1512;
+    --surface:       #FFFFFF;
+    --ink:           #241B17;
+    --ink-muted:     #7C6A62;
+    --ink-inverse:   #F6EDE7;
+    --ink-inverse-muted: #B6A197;
+    --coral:         #E04A2C;
+    --coral-bright:  #FF7C5C;
+    --coral-wash:    #FBE9E3;
+    --teal:          #0E7C6B;
+    --teal-wash:     #DFF1ED;
+    --line:          #E7DCD5;
+    --line-inverse:  #3A2E28;
+
+    --sans: "Segoe UI Variable Display", "Segoe UI", system-ui, -apple-system,
+            "Helvetica Neue", Arial, sans-serif;
+    --mono: "Cascadia Mono", Consolas, ui-monospace, "SF Mono", Menlo, monospace;
+
+    --measure: 34rem;
+    --gutter: clamp(1.25rem, 5vw, 3rem);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --ground:      #171210;
+      --surface:     #201A17;
+      --ink:         #F4EBE5;
+      --ink-muted:   #B09C92;
+      --coral:       #FF7C5C;
+      --coral-wash:  #35201A;
+      --teal:        #5FD3BE;
+      --teal-wash:   #14322D;
+      --line:        #362C27;
+    }
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--ground);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: clamp(1rem, .96rem + .2vw, 1.09rem);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .band { padding: clamp(3.5rem, 9vw, 6.5rem) var(--gutter); }
+  .inner { max-width: 62rem; margin: 0 auto; }
+  p { max-width: var(--measure); }
+
+  h1, h2, h3 { text-wrap: balance; letter-spacing: -.025em; margin: 0; }
+
+  /* ---------------- Head band ---------------- */
+
+  .hero {
+    background: var(--ground-deep);
+    color: var(--ink-inverse);
+    padding-top: clamp(2rem, 5vw, 3rem);
+  }
+
+  .brandline {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: clamp(3rem, 9vw, 5.5rem);
+  }
+
+  .brand {
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: -.02em;
+    color: var(--coral-bright);
+  }
+
+  .lang {
+    font-size: .88rem;
+    color: var(--ink-inverse-muted);
+    text-decoration: underline;
+    text-underline-offset: .18em;
+  }
+  .lang:hover { color: var(--coral-bright); }
+
+  .hero h1 {
+    font-size: clamp(2.3rem, 7.5vw, 4.4rem);
+    line-height: 1.02;
+    font-weight: 700;
+    max-width: 18ch;
+  }
+
+  .hero h1 .quiet { color: var(--ink-inverse-muted); }
+
+  .hero-body {
+    margin-top: 1.6rem;
+    color: var(--ink-inverse-muted);
+    font-size: clamp(1.05rem, 1rem + .35vw, 1.3rem);
+    max-width: 36rem;
+  }
+
+  .hero-body strong { color: var(--ink-inverse); font-weight: 600; }
+
+  /* The note card — the same object the app shows. */
+  .note-card {
+    margin-top: clamp(2.5rem, 6vw, 3.5rem);
+    max-width: 30rem;
+    background: var(--teal-wash);
+    border-radius: 14px;
+    padding: 1.15rem 1.3rem 1.35rem;
+    color: #10322C;
+  }
+  @media (prefers-color-scheme: dark) { .note-card { color: #D8F2EC; } }
+
+  .note-card .ask {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--teal);
+    margin: 0 0 .15rem;
+  }
+  .note-card .hint { margin: 0 0 .9rem; font-size: .92rem; opacity: .75; }
+  .note-card .written {
+    margin: 0;
+    font-size: 1.05rem;
+    border-top: 1px solid rgba(14, 124, 107, .25);
+    padding-top: .85rem;
+  }
+  .note-card .stamp {
+    display: block;
+    margin-top: .7rem;
+    font-family: var(--mono);
+    font-size: .78rem;
+    opacity: .6;
+  }
+
+  .status {
+    margin-top: clamp(2.5rem, 6vw, 3.5rem);
+    display: inline-flex;
+    align-items: center;
+    gap: .55rem;
+    border: 1px solid var(--line-inverse);
+    border-radius: 99px;
+    padding: .45rem .95rem;
+    font-size: .88rem;
+    color: var(--ink-inverse-muted);
+  }
+  .dot {
+    width: .5rem; height: .5rem; border-radius: 50%;
+    background: var(--coral-bright); flex: none;
+  }
+
+  /* ---------------- Sections ---------------- */
+
+  .eyebrow {
+    font-size: .72rem;
+    font-weight: 700;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: var(--coral);
+    margin-bottom: .9rem;
+  }
+
+  h2 { font-size: clamp(1.6rem, 1.2rem + 1.6vw, 2.4rem); line-height: 1.12; }
+  .band > .inner > p { margin-top: 1.1rem; color: var(--ink-muted); }
+
+  .steps {
+    margin-top: clamp(2rem, 5vw, 3rem);
+    display: grid;
+    gap: clamp(1.5rem, 4vw, 2.5rem);
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  }
+  .step h3 { font-size: 1.12rem; margin-bottom: .4rem; }
+  .step p { color: var(--ink-muted); font-size: .95rem; margin: 0; max-width: 26rem; }
+  .step .num {
+    font-family: var(--mono);
+    font-size: .8rem;
+    font-weight: 700;
+    color: var(--coral);
+    display: block;
+    margin-bottom: .5rem;
+  }
+
+  /* ---------------- What it does not do ---------------- */
+
+  .plain { background: var(--surface); border-block: 1px solid var(--line); }
+
+  .facts {
+    margin-top: clamp(1.8rem, 4vw, 2.5rem);
+    display: grid;
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    overflow: hidden;
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  }
+  .fact { background: var(--surface); padding: 1.15rem 1.25rem; }
+  .fact h3 { font-size: 1rem; margin-bottom: .3rem; }
+  .fact p { font-size: .92rem; color: var(--ink-muted); margin: 0; max-width: none; }
+
+  .proof {
+    margin-top: 1.5rem;
+    border-left: 3px solid var(--coral);
+    padding: .2rem 0 .2rem 1rem;
+    font-size: .95rem;
+    color: var(--ink-muted);
+    max-width: var(--measure);
+  }
+  .proof code {
+    font-family: var(--mono);
+    font-size: .88em;
+    background: var(--coral-wash);
+    color: var(--coral);
+    border-radius: 4px;
+    padding: .06em .3em;
+  }
+
+  /* ---------------- The shared picture ---------------- */
+
+  .share-layout {
+    margin-top: clamp(2rem, 5vw, 3rem);
+    display: grid;
+    gap: clamp(2rem, 5vw, 3.5rem);
+    grid-template-columns: 1fr;
+    align-items: center;
+  }
+  @media (min-width: 52rem) {
+    .share-layout { grid-template-columns: 1fr minmax(15rem, 20rem); }
+  }
+
+  .stack {
+    position: relative;
+    aspect-ratio: 9 / 13;
+    max-width: 20rem;
+    width: 100%;
+    justify-self: center;
+  }
+  .pola {
+    position: absolute;
+    width: 58%;
+    background: #fff;
+    border-radius: 3px;
+    padding: 6% 6% 15%;
+    box-shadow: 0 1px 2px rgba(0,0,0,.18), 0 14px 26px -14px rgba(0,0,0,.5);
+  }
+  .pola i {
+    display: block;
+    aspect-ratio: 4 / 5;
+    border-radius: 1px;
+    background: linear-gradient(150deg, var(--a), var(--b));
+  }
+  .pola b {
+    position: absolute;
+    left: 0; right: 0; bottom: 3.5%;
+    text-align: center;
+    font-family: var(--mono);
+    font-size: .8rem;
+    font-weight: 600;
+    color: #2A211C;
+  }
+  .p1 { left:  2%; top:  0%; transform: rotate(-5deg);  --a:#8FB6A0; --b:#4E7A63; }
+  .p2 { right: 0%; top: 20%; transform: rotate( 4deg);  --a:#E9B08A; --b:#B5643C; }
+  .p3 { left:  4%; top: 44%; transform: rotate(-3deg);  --a:#9DB2CE; --b:#4E6484; }
+  .p4 { right: 3%; top: 66%; transform: rotate( 5deg);  --a:#D8A0AE; --b:#8E5266; }
+
+  /* ---------------- Foot ---------------- */
+
+  footer {
+    background: var(--ground-deep);
+    color: var(--ink-inverse-muted);
+    padding: clamp(3rem, 7vw, 4.5rem) var(--gutter);
+    font-size: .92rem;
+  }
+  footer .inner { display: grid; gap: 1.5rem; }
+  footer a { color: var(--ink-inverse); text-decoration: underline; text-underline-offset: .18em; }
+  footer a:hover { color: var(--coral-bright); }
+  footer a:focus-visible, .status:focus-visible, .lang:focus-visible {
+    outline: 2px solid var(--coral-bright); outline-offset: 3px;
+  }
+  .foot-links { display: flex; flex-wrap: wrap; gap: 1.25rem; }
+</style>
+</head>
+<body>
+
+<header class="band hero">
+  <div class="inner">
+    <div class="brandline">
+      <div class="brand">Yesta</div>
+      <a class="lang" href="../index.html" hreflang="de">Deutsch</a>
+    </div>
+
+    <h1>Nobody keeps a diary going. <span class="quiet">You don't have to either.</span></h1>
+
+    <p class="hero-body">
+      Everyone gives up after three weeks — because a blank page in the evening
+      is a debt you owe. But <strong>anyone can say what a day was, once they
+      are shown a picture of it.</strong>
+    </p>
+
+    <div class="note-card">
+      <p class="ask">What happened today?</p>
+      <p class="hint">One sentence is enough. In a year you will be glad you wrote it.</p>
+      <p class="written">
+        First day without training wheels. Four metres, then the grass.
+        <span class="stamp">14 August 2025 · shows up again on 14 August 2026</span>
+      </p>
+    </div>
+
+    <div class="status"><span class="dot"></span> Currently in family testing · Android · coming to the Play Store</div>
+  </div>
+</header>
+
+<section class="band">
+  <div class="inner">
+    <div class="eyebrow">How it works</div>
+    <h2>Three moves, two of which the app makes.</h2>
+
+    <div class="steps">
+      <div class="step">
+        <span class="num">01</span>
+        <h3>Yesta looks back</h3>
+        <p>
+          Every morning it brings up this calendar day from all your earlier
+          years — from your photo library, right on the device.
+        </p>
+      </div>
+      <div class="step">
+        <span class="num">02</span>
+        <h3>You answer</h3>
+        <p>
+          One sentence about today. Typed or spoken. Even about days there is
+          not a single photo of.
+        </p>
+      </div>
+      <div class="step">
+        <span class="num">03</span>
+        <h3>Next year it is there</h3>
+        <p>
+          Next to today's pictures. That is how a diary comes about without you
+          ever having started one.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band plain">
+  <div class="inner">
+    <div class="eyebrow">What Yesta does not do</div>
+    <h2>No account. No cloud. No subscription.</h2>
+    <p>
+      This is not a setting you can flip — it is how the app is built.
+    </p>
+
+    <div class="facts">
+      <div class="fact">
+        <h3>No server</h3>
+        <p>There isn't one. Your photos and notes stay where they were made.</p>
+      </div>
+      <div class="fact">
+        <h3>No sign-in</h3>
+        <p>No account, no email address, no password. The app asks for none of it.</p>
+      </div>
+      <div class="fact">
+        <h3>No advertising</h3>
+        <p>And no analysis of your behaviour. There is nobody for anything to go to.</p>
+      </div>
+      <div class="fact">
+        <h3>No subscription</h3>
+        <p>The full history is free. What costs money later is a one-time purchase.</p>
+      </div>
+    </div>
+
+    <p class="proof">
+      <strong>Verifiable, not merely claimed:</strong> Yesta does not even
+      request the <code>INTERNET</code> permission. The app is technically
+      unable to open a network connection — it works in flight mode exactly as
+      it does otherwise.
+    </p>
+  </div>
+</section>
+
+<section class="band">
+  <div class="inner">
+    <div class="eyebrow">Passing it on</div>
+    <h2>One day across five years, as a single picture.</h2>
+
+    <div class="share-layout">
+      <div>
+        <p>
+          A calendar day becomes a picture that looks like photos on a table:
+          laid over one another, slightly turned, the year underneath. The
+          arrangement is different every time.
+        </p>
+        <p>
+          No watermark, no logo. The photo belongs to you, not to the app — a
+          picture of your own child with a product name on it is no longer a
+          memory, it is an advertisement.
+        </p>
+      </div>
+
+      <div class="stack" role="img" aria-label="Four instant photos laid over one another at an angle, labelled with the years 2026, 2025, 2024 and 2022">
+        <div class="pola p1"><i></i><b>2026</b></div>
+        <div class="pola p2"><i></i><b>2025</b></div>
+        <div class="pola p3"><i></i><b>2024</b></div>
+        <div class="pola p4"><i></i><b>2022</b></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="inner">
+    <div>
+      <strong style="color:var(--ink-inverse)">Yesta</strong> — your diary,
+      written backwards. For Android 8 and later.
+    </div>
+
+    <div class="foot-links">
+      <a href="privacy.html">Privacy policy</a>
+      <a href="imprint.html">Legal notice</a>
+      <a href="mailto:kontakt@yesta.app">Contact</a>
+      <a href="../index.html" hreflang="de">Deutsch</a>
+    </div>
+
+  </div>
+</footer>
+
+</body>
+</html>
