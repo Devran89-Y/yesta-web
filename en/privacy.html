@@ -15,14 +15,15 @@
 <a class="back" href="index.html">← Yesta</a>
 
 <h1>Privacy policy</h1>
-<p class="stand">As of 5 September 2026 · Applies to the Android app Yesta from version 1.32.0 · <a href="../datenschutz.html">Deutsch</a></p>
+<p class="stand">As of 11 September 2026 · Applies to the Android app Yesta from version 1.32.0; anything marked <em>from 1.35.0</em> applies from that version · <a href="../datenschutz.html">Deutsch</a></p>
 
 <div class="kasten">
   <p><strong>In short: Yesta sends nothing.</strong> The app does not even
   request the <code>INTERNET</code> permission — it is technically unable to
   open a network connection. There is no account, no sign-in, no server and no
   advertising.</p>
-  <p>All photos, all notes and all analysis stay on the device.</p>
+  <p>All photos, all notes and all analysis stay on the device — unless you
+  send something out yourself (section 5).</p>
 </div>
 
 <h2>1. Controller</h2>
@@ -47,6 +48,7 @@ a database that exists only on the device. It contains:</p>
   <tbody>
     <tr><td>Reference to the photo or video, capture time, folder name, file name</td><td>the device's photo library</td></tr>
     <tr><td>Image dimensions, camera model, orientation</td><td>the shot's EXIF data</td></tr>
+    <tr><td>The shot's coordinates, where the camera recorded them</td><td>the shot's EXIF data — they stay on the device, see section 3</td></tr>
     <tr><td>Rating by sharpness, exposure, colourfulness</td><td>computed by Yesta on the device</td></tr>
     <tr><td><strong>Face prints and person groups</strong></td><td><strong>only after explicit consent</strong> — see section 2.1</td></tr>
     <tr><td>Labels for what a picture shows (“beach”, “Christmas”) with a confidence value</td><td>computed by Yesta on the device</td></tr>
@@ -55,14 +57,19 @@ a database that exists only on the device. It contains:</p>
     <tr><td>Notes you write about days and about individual shots</td><td>your input</td></tr>
     <tr><td>Special days you enter yourself</td><td>your input</td></tr>
     <tr><td>Which periods or shots you have hidden</td><td>your input</td></tr>
-    <tr><td>Number of days on which the app was opened</td><td>counted by Yesta on the device</td></tr>
+    <tr><td>Hearts on shots</td><td>your input, or taken over from your gallery</td></tr>
+    <tr><td>Capture dates you assigned yourself</td><td>your input</td></tr>
+    <tr><td>Letters to later: the text, the day it was written, the day it is to open, and when it was opened (<em>from 1.35.0</em>)</td><td>your input</td></tr>
+    <tr><td>On how many days the app was opened, how often via the widget or a notification, how often a slideshow ran and how often something was shared — numbers only</td><td>counted by Yesta on the device</td></tr>
   </tbody>
 </table>
 </div>
 
 <p><strong>The photos themselves are not copied.</strong> Yesta remembers
 references to the shots and reads them in order to display them. No second
-collection is created.</p>
+collection is created. The one exception is <em>Send as a day</em> (section
+5): it creates scaled-down copies, and photos you receive that way are placed
+in your gallery.</p>
 
 <p><strong>None of this is transmitted.</strong> The database sits in the
 private app directory and cannot be read by other apps. Android's system backup
@@ -142,6 +149,12 @@ on under <em>Settings → Show places</em>; turn it off again in the same place.
 Names already resolved remain on the device afterwards. Which data Google is
 responsible for during a lookup is governed by Google's privacy policy.</p>
 
+<p><strong>Yesta works with the coordinates themselves only on the
+device</strong> — for example for <em>Your chapters</em> (<em>from
+1.35.0</em>), which reads off from the date and place of your photos which
+stretches you spent away from home. No place name is needed for that, and
+nothing is looked up.</p>
+
 <h2>4. Spoken notes</h2>
 
 <p>Notes can be dictated instead of typed. For this, Yesta asks for permission
@@ -158,27 +171,65 @@ into the note field, where it can still be edited before saving.</p>
 
 <h2>5. What you can send yourself</h2>
 
-<p>Three paths lead out of the app. <strong>You start all three, and in all
-three you see beforehand what goes out.</strong></p>
+<p>Four paths lead out of the app. <strong>You start all four, and in all
+four you see beforehand what goes out.</strong></p>
 
 <ul>
   <li><strong>Sharing photos and collages.</strong> Through Android's share
-  sheet to an app you choose yourself. Notes never go along.</li>
+  sheet to an app you choose yourself. As one picture or as single photos,
+  your notes never go along — only a text you type into the share dialog
+  yourself.</li>
+
+  <li><strong>Sending a day as a file</strong> (<em>from 1.35.0</em>).
+  <em>Day card → Share → Send as a day</em> packs the best shots of that day
+  from the years you tick into one ZIP file: at most 24, scaled down to at most
+  2048 pixels on the long edge. When they are scaled down, everything the
+  photos carry is dropped — <strong>no location, no camera</strong>. Only the
+  capture time and time zone are written back, so that the photo lands on the
+  right day for the recipient. Anyone who wants to send the location as well
+  shares the originals as <em>Single photos</em>. <strong>Your note goes along
+  only if you tick <em>Send my note along</em></strong>; that box is off by
+  default. The note is then in the file in plain text, together with a short
+  readme for recipients without Yesta. Where the file goes, you choose in
+  Android's share sheet. The file in the private app directory is deleted the
+  next time you send a day.</li>
 
   <li><strong>Feedback and problem report.</strong>
-  <em>Gear → How is it going?</em> assembles a text: version number, device
-  model, Android version, the number of days of use, and the number of notes,
-  special days and hidden shots. <strong>No photos, no places, no note
+  <em>Gear → How is it going?</em> assembles a text: version number, since when
+  and on how many days the app was used, how often via the widget or a
+  notification, and the number of notes, special days, hidden shots,
+  slideshows and shares. <strong>No photos, no places, no note
   texts.</strong> The text is shown in full on the screen before anything
-  happens; you send it with an app of your choice. The same applies to the
-  crash report: after a crash it stays on the device and is offered at the next
+  happens; you send it with an app of your choice. A problem report also
+  contains the device model and Android version. The same applies to the crash
+  report: after a crash it stays on the device and is offered at the next
   start. Declining deletes it.</li>
 
   <li><strong>Note backup.</strong> <em>Yours → Backup</em> writes day notes,
-  photo notes and special days into a folder you pick yourself. If you choose a
-  folder that is synchronised with a cloud service, the notes go there — that
-  is intended and is in your hands. Yesta itself transmits nothing.</li>
+  photo notes, special days, hearts, hidden shots, assigned dates and —
+  <em>from 1.35.0</em> — letters to later into a folder you pick yourself.
+  <strong>Letters are in that file in plain text, including the ones not yet
+  opened</strong>: whoever opens the file can read them. If you choose a folder
+  that is synchronised with a cloud service, the contents go there — that is
+  intended and is in your hands. The notes can also be shared as a text file
+  to an app of your choice; letters are not included in it. Yesta itself
+  transmits nothing.</li>
 </ul>
+
+<h3>Receiving a shared day (<em>from 1.35.0</em>)</h3>
+
+<p>Yesta opens only files created with <em>Send as a day</em>, and shows what
+is in one before anything is kept — through <em>Open with</em>, or under
+<em>Yours → Open a shared day</em>. Only when you tap <em>Add</em> does Yesta
+place the photos in the album “Yesta” in your gallery (Android 10 and later)
+and add them on the day they were taken; the album is added to your folder
+selection for that. A note that came along is kept only with <em>Keep the
+note</em> ticked, and goes below a note of your own, never over it. The copy
+of the file in the app's cache is deleted afterwards.</p>
+
+<p>Whoever receives a day gets another person's photos, and perhaps their
+words, onto their own device. Yesta treats them like your own and passes them
+on nowhere.</p>
 
 <h2>6. Permissions in detail</h2>
 
@@ -190,11 +241,13 @@ three you see beforehand what goes out.</strong></p>
   <tbody>
     <tr><td><code>READ_MEDIA_IMAGES</code>, <code>READ_MEDIA_VIDEO</code></td><td>Reading the photo library. That is the purpose of the app</td></tr>
     <tr><td><code>READ_MEDIA_VISUAL_USER_SELECTED</code></td><td>So that sharing individual photos from Android 14 onwards does not count as a refusal</td></tr>
+    <tr><td><code>READ_EXTERNAL_STORAGE</code></td><td>The same on Android 12 and earlier, where the two permissions above do not exist yet</td></tr>
     <tr><td><code>ACCESS_MEDIA_LOCATION</code></td><td>Without it, Android 10 and later strips the coordinates from every photo the app opens</td></tr>
     <tr><td><code>RECORD_AUDIO</code></td><td>Only for the spoken note. Requested when you first tap the microphone</td></tr>
-    <tr><td><code>POST_NOTIFICATIONS</code></td><td>For the memory of the day. Off until you agree</td></tr>
+    <tr><td><code>POST_NOTIFICATIONS</code></td><td>For the memory of the day and — <em>from 1.35.0</em> — for a letter to later that opens today. That notification only says when the letter was written, never what it says. Off until you agree</td></tr>
     <tr><td><code>RECEIVE_BOOT_COMPLETED</code></td><td>So the widget shows the right day again after a restart</td></tr>
     <tr><td><code>ACCESS_NETWORK_STATE</code>, <code>WAKE_LOCK</code>, <code>FOREGROUND_SERVICE</code></td><td>Brought along by the WorkManager system library, which drives background passes. None of them allows a network connection</td></tr>
+    <tr><td><code>…DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION</code></td><td>Created by the AndroidX system library. It makes sure that only Yesta itself receives its internal messages. No data, no dialog</td></tr>
   </tbody>
 </table>
 </div>
@@ -221,12 +274,31 @@ policy applies.</p>
 
 <p>All data stays on the device for as long as the app is installed.</p>
 
-<p><strong>Uninstalling deletes everything</strong> Yesta has created —
-database, notes, settings and counters. The photos themselves are untouched;
-they belong to the photo library and are never changed or deleted by Yesta.</p>
+<p><strong>Uninstalling deletes everything</strong> Yesta has created in the
+app — database, notes, letters, settings and counters. The photos themselves
+are untouched; they belong to the photo library.</p>
 
-<p>Individual notes can be deleted in the app. If you only want to rebuild the
-index, you will find that under <em>Settings</em>.</p>
+<p><strong>Yesta never changes or deletes a photo on its own.</strong> Two
+paths do so when you ask, both from Android 11, and in both Android asks in a
+dialog of its own before anything happens:</p>
+
+<ul>
+  <li><strong>Into the trash.</strong> From the single view, a shot can be
+  moved to your gallery's trash. Android keeps it there for thirty days; after
+  that it is deleted for good. A note on that shot cannot be recovered; the
+  app says so beforehand.</li>
+
+  <li><strong>Hearts into the gallery.</strong> Under <em>Settings</em>, the
+  hearts given in Yesta can be transferred to the gallery in one go. None is
+  taken away.</li>
+</ul>
+
+<p>Individual notes and letters can be deleted in the app. If you only want to
+rebuild the index, you will find that under <em>Settings</em>.</p>
+
+<p>Photos received through <em>Send as a day</em> (section 5) are in the album
+“Yesta” in your gallery. They stay there after uninstalling, like any other
+photo, and can be deleted in the gallery.</p>
 
 <p><strong>Face prints can be deleted on their own</strong>, without
 uninstalling: switching off <em>Settings → Group faces</em> deletes them along
