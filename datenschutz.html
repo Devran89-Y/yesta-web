@@ -13,7 +13,7 @@
 <a class="back" href="index.html">← Yesta</a>
 
 <h1>Datenschutzerklärung</h1>
-<p class="stand">Stand: 5. September 2026 · Gilt für die Android-App Yesta ab Fassung 1.32.0 · <a href="en/privacy.html" hreflang="en">English</a></p>
+<p class="stand">Stand: 11. September 2026 · Gilt für die Android-App Yesta ab Fassung 1.32.0; was mit <em>ab 1.35.0</em> bezeichnet ist, gilt ab dieser Fassung · <a href="en/privacy.html" hreflang="en">English</a></p>
 
 
 <div class="kasten">
@@ -21,7 +21,8 @@
   Berechtigung <code>INTERNET</code> gar nicht erst an — sie kann technisch keine
   Verbindung ins Netz aufbauen. Es gibt kein Konto, keine Anmeldung, keinen
   Server und keine Werbung.</p>
-  <p>Alle Fotos, alle Notizen und alle Auswertungen bleiben auf dem Gerät.</p>
+  <p>Alle Fotos, alle Notizen und alle Auswertungen bleiben auf dem Gerät —
+  es sei denn, der Nutzer schickt selbst etwas hinaus (Abschnitt 5).</p>
 </div>
 
 <h2>1. Verantwortlicher</h2>
@@ -47,6 +48,7 @@ Darin stehen:</p>
   <tbody>
     <tr><td>Verweis auf das Foto oder Video, Aufnahmezeitpunkt, Ordnername, Dateiname</td><td>Fotomediathek des Geräts</td></tr>
     <tr><td>Bildmaße, Kameramodell, Ausrichtung</td><td>EXIF-Angaben der Aufnahme</td></tr>
+    <tr><td>Koordinaten der Aufnahme, sofern die Kamera sie gespeichert hat</td><td>EXIF-Angaben der Aufnahme — sie bleiben auf dem Gerät, siehe Abschnitt 3</td></tr>
     <tr><td>Bewertung nach Schärfe, Belichtung, Farbigkeit</td><td>von Yesta auf dem Gerät berechnet</td></tr>
     <tr><td><strong>Gesichtsabdrücke und Personengruppen</strong></td><td><strong>nur nach ausdrücklicher Zusage</strong> — siehe Abschnitt 2.1</td></tr>
     <tr><td>Begriffe zu dem, was auf einem Bild zu sehen ist („Strand“, „Weihnachten“) samt Sicherheit</td><td>von Yesta auf dem Gerät berechnet</td></tr>
@@ -55,14 +57,19 @@ Darin stehen:</p>
     <tr><td>Selbst geschriebene Notizen zu Tagen und zu einzelnen Aufnahmen</td><td>Eingabe des Nutzers</td></tr>
     <tr><td>Selbst eingetragene besondere Tage</td><td>Eingabe des Nutzers</td></tr>
     <tr><td>Welche Zeiträume oder Aufnahmen ausgeblendet wurden</td><td>Eingabe des Nutzers</td></tr>
-    <tr><td>Anzahl der Tage, an denen die App geöffnet wurde</td><td>von Yesta auf dem Gerät gezählt</td></tr>
+    <tr><td>Herzen an Aufnahmen</td><td>Eingabe des Nutzers, oder aus der Galerie übernommen</td></tr>
+    <tr><td>Selbst zugeordnete Aufnahmedaten</td><td>Eingabe des Nutzers</td></tr>
+    <tr><td>Briefe an später: der Text, der Tag, an dem er geschrieben wurde, der Tag, an dem er aufgehen soll, und wann er geöffnet wurde (<em>ab 1.35.0</em>)</td><td>Eingabe des Nutzers</td></tr>
+    <tr><td>An wie vielen Tagen die App geöffnet wurde, wie oft über Widget oder Meldung, wie oft eine Diashow lief und wie oft geteilt wurde — nur Zahlen</td><td>von Yesta auf dem Gerät gezählt</td></tr>
   </tbody>
 </table>
 </div>
 
 <p><strong>Die Fotos selbst werden nicht kopiert.</strong> Yesta merkt sich
 Verweise auf die Aufnahmen und liest sie zum Anzeigen. Es entsteht keine zweite
-Sammlung.</p>
+Sammlung. Die einzige Ausnahme ist <em>Als Tag senden</em> (Abschnitt 5):
+Dafür entstehen verkleinerte Kopien, und so empfangene Fotos legt Yesta in die
+Galerie.</p>
 
 <p><strong>Nichts davon wird übertragen.</strong> Die Datenbank liegt im privaten
 App-Verzeichnis und ist für andere Apps nicht lesbar. Die Systemsicherung von
@@ -147,6 +154,11 @@ ebenda. Bereits aufgelöste Namen bleiben danach auf dem Gerät stehen. Für wel
 Daten Google beim Nachschlagen verantwortlich ist, richtet sich nach den
 Datenschutzbestimmungen von Google.</p>
 
+<p><strong>Mit den Koordinaten selbst rechnet Yesta nur auf dem Gerät</strong>
+— etwa für <em>Deine Kapitel</em> (<em>ab 1.35.0</em>), die an Datum und Ort
+der Fotos ablesen, welche Strecken jemand woanders verbracht hat als zu Hause.
+Dafür braucht es keinen Ortsnamen, und es wird nichts nachgeschlagen.</p>
+
 <h2>4. Gesprochene Notizen</h2>
 
 <p>Notizen lassen sich diktieren statt tippen. Dafür fragt Yesta beim ersten
@@ -163,29 +175,67 @@ im Notizfeld, wo er vor dem Speichern noch geändert werden kann.</p>
 
 <h2>5. Was der Nutzer selbst versenden kann</h2>
 
-<p>Drei Wege führen aus der App hinaus. <strong>Alle drei löst der Nutzer aus,
-und bei allen dreien sieht er vorher, was hinausgeht.</strong></p>
+<p>Vier Wege führen aus der App hinaus. <strong>Alle vier löst der Nutzer aus,
+und bei allen vieren sieht er vorher, was hinausgeht.</strong></p>
 
 <ul>
   <li><strong>Fotos und Kollagen teilen.</strong> Über die Teilen-Auswahl von
-  Android an eine App, die der Nutzer selbst wählt. Notizen gehen dabei nie mit.</li>
+  Android an eine App, die der Nutzer selbst wählt. Als Bild und als einzelne
+  Fotos gehen Notizen nie mit — nur ein Begleittext, den der Nutzer im
+  Teilen-Dialog selbst eintippt.</li>
+
+  <li><strong>Einen Tag als Datei senden</strong> (<em>ab 1.35.0</em>).
+  <em>Tageskarte → Teilen → Als Tag senden</em> packt die besten Aufnahmen
+  dieses Tages aus den angehakten Jahren in eine ZIP-Datei: höchstens 24,
+  verkleinert auf höchstens 2048 Pixel an der langen Kante. Beim Verkleinern
+  fällt alles weg, was die Fotos mit sich tragen — <strong>kein Ort, keine
+  Kamera</strong>. Nur Aufnahmezeit und Zeitzone werden wieder hineingeschrieben,
+  damit das Foto beim Empfänger am richtigen Tag steht. Wer den Ort mitschicken
+  will, teilt die Originale als <em>Einzelne Fotos</em>. <strong>Die eigene
+  Notiz geht nur mit, wenn der Nutzer den Haken <em>Meine Notiz
+  mitschicken</em> setzt</strong>; ab Werk ist er aus. Dann steht sie im
+  Klartext in der Datei, zusammen mit einer kurzen Lesehilfe für Empfänger ohne
+  Yesta. Wohin die Datei geht, wählt der Nutzer in der Teilen-Auswahl von
+  Android. Die Datei im privaten App-Verzeichnis wird beim nächsten Senden
+  gelöscht.</li>
 
   <li><strong>Rückmeldung und Fehlerbericht.</strong>
   <em>Zahnrad → Wie läuft es?</em> stellt einen Text zusammen: Fassungsnummer,
-  Gerätemodell, Android-Version, die Anzahl der Tage mit Benutzung sowie die
-  Anzahl der Notizen, besonderen Tage und ausgeblendeten Aufnahmen.
+  seit wann und an wie vielen Tagen die App benutzt wurde, wie oft über Widget
+  oder Meldung, sowie die Anzahl der Notizen, besonderen Tage, ausgeblendeten
+  Aufnahmen, Diashows und geteilten Inhalte.
   <strong>Keine Fotos, keine Orte, keine Notiztexte.</strong> Der Text steht
   vollständig auf dem Bildschirm, bevor irgendetwas geschieht; versendet wird er
-  vom Nutzer mit einer App seiner Wahl. Dasselbe gilt für den Absturzbericht: Er
+  vom Nutzer mit einer App seiner Wahl. Ein Fehlerbericht nennt zusätzlich
+  Gerätemodell und Android-Version. Dasselbe gilt für den Absturzbericht: Er
   liegt nach einem Absturz auf dem Gerät und wird beim nächsten Start angeboten.
   Wer ablehnt, löscht ihn damit.</li>
 
   <li><strong>Notizsicherung.</strong> <em>Yours → Sichern</em> schreibt
-  Tagesnotizen, Fotonotizen und besondere Tage in einen Ordner, den der Nutzer
-  selbst aussucht. Wählt er einen Ordner, der mit einem Cloud-Dienst abgeglichen
-  wird, gelangen die Notizen dorthin — das ist gewollt und liegt in seiner Hand.
-  Yesta selbst überträgt nichts.</li>
+  Tagesnotizen, Fotonotizen, besondere Tage, Herzen, Ausblendungen, zugeordnete
+  Daten und — <em>ab 1.35.0</em> — die Briefe an später in einen Ordner, den der
+  Nutzer selbst aussucht. <strong>Briefe stehen darin im Klartext, auch die noch
+  nicht geöffneten</strong>: Wer die Datei öffnet, kann sie lesen. Wählt er einen
+  Ordner, der mit einem Cloud-Dienst abgeglichen wird, gelangt der Inhalt
+  dorthin — das ist gewollt und liegt in seiner Hand. Die Notizen lassen sich
+  außerdem als Textdatei an eine App eigener Wahl geben; Briefe stehen darin
+  nicht. Yesta selbst überträgt nichts.</li>
 </ul>
+
+<h3>Einen geteilten Tag empfangen (<em>ab 1.35.0</em>)</h3>
+
+<p>Yesta öffnet nur Dateien, die mit <em>Als Tag senden</em> entstanden sind,
+und zeigt vor dem Übernehmen, was darin ist — über <em>Öffnen mit</em> oder
+unter <em>Yours → Geteilten Tag öffnen</em>. Erst mit <em>Übernehmen</em> legt
+Yesta die Fotos in das Album „Yesta“ der Galerie (ab Android 10) und trägt sie
+an dem Tag ein, an dem sie aufgenommen wurden; das Album kommt dafür in die
+Ordnerauswahl. Eine mitgeschickte Notiz wird nur mit dem Haken <em>Notiz
+übernehmen</em> übernommen und kommt unter eine eigene, nie darüber. Die Kopie
+der Datei im Zwischenspeicher der App wird danach gelöscht.</p>
+
+<p>Wer einen Tag empfängt, bekommt die Fotos und vielleicht die Worte eines
+anderen Menschen auf sein Gerät. Yesta behandelt sie wie die eigenen und gibt
+sie nirgendwohin weiter.</p>
 
 <h2>6. Berechtigungen im Einzelnen</h2>
 
@@ -197,11 +247,13 @@ und bei allen dreien sieht er vorher, was hinausgeht.</strong></p>
   <tbody>
     <tr><td><code>READ_MEDIA_IMAGES</code>, <code>READ_MEDIA_VIDEO</code></td><td>Die Fotomediathek lesen. Das ist der Zweck der App</td></tr>
     <tr><td><code>READ_MEDIA_VISUAL_USER_SELECTED</code></td><td>Damit die Freigabe einzelner Fotos ab Android 14 nicht als Ablehnung gilt</td></tr>
+    <tr><td><code>READ_EXTERNAL_STORAGE</code></td><td>Dasselbe auf Android 12 und älter, wo es die beiden oberen Berechtigungen noch nicht gibt</td></tr>
     <tr><td><code>ACCESS_MEDIA_LOCATION</code></td><td>Ohne sie entfernt Android ab Version 10 die Koordinaten aus jedem Foto, das die App öffnet</td></tr>
     <tr><td><code>RECORD_AUDIO</code></td><td>Nur für die gesprochene Notiz. Wird erst beim ersten Tippen auf das Mikrofon erfragt</td></tr>
-    <tr><td><code>POST_NOTIFICATIONS</code></td><td>Für die Erinnerung des Tages. Aus, bis der Nutzer zustimmt</td></tr>
+    <tr><td><code>POST_NOTIFICATIONS</code></td><td>Für die Erinnerung des Tages und — <em>ab 1.35.0</em> — für einen Brief an später, der heute aufgeht. Diese Meldung nennt nur, wann er geschrieben wurde, nie seinen Text. Aus, bis der Nutzer zustimmt</td></tr>
     <tr><td><code>RECEIVE_BOOT_COMPLETED</code></td><td>Damit das Widget nach einem Neustart wieder den richtigen Tag zeigt</td></tr>
     <tr><td><code>ACCESS_NETWORK_STATE</code>, <code>WAKE_LOCK</code>, <code>FOREGROUND_SERVICE</code></td><td>Von der Systembibliothek WorkManager mitgebracht, die Durchläufe im Hintergrund steuert. Keine davon erlaubt eine Netzverbindung</td></tr>
+    <tr><td><code>…DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION</code></td><td>Von der Systembibliothek AndroidX angelegt. Sie sorgt dafür, dass nur Yesta selbst ihre internen Nachrichten empfängt. Keine Daten, kein Dialog</td></tr>
   </tbody>
 </table>
 </div>
@@ -228,13 +280,32 @@ die Datenschutzbestimmungen von Google.</p>
 
 <p>Alle Daten bleiben so lange auf dem Gerät, wie die App installiert ist.</p>
 
-<p><strong>Deinstallieren löscht alles</strong>, was Yesta angelegt hat —
-Datenbank, Notizen, Einstellungen und Zähler. Die Fotos selbst sind davon nicht
-berührt; sie gehören der Fotomediathek und werden von Yesta nie verändert oder
-gelöscht.</p>
+<p><strong>Deinstallieren löscht alles</strong>, was Yesta in der App angelegt
+hat — Datenbank, Notizen, Briefe, Einstellungen und Zähler. Die Fotos selbst
+sind davon nicht berührt; sie gehören der Fotomediathek.</p>
 
-<p>Einzelne Notizen lassen sich in der App löschen. Wer nur den Index neu bauen
-will, findet das unter <em>Einstellungen</em>.</p>
+<p><strong>Von sich aus verändert oder löscht Yesta kein Foto.</strong> Zwei
+Wege tun es auf Wunsch, beide ab Android 11, und bei beiden fragt Android in
+einem eigenen Dialog nach, bevor etwas geschieht:</p>
+
+<ul>
+  <li><strong>In den Papierkorb.</strong> Aus der Einzelansicht lässt sich eine
+  Aufnahme in den Papierkorb der Galerie verschieben. Dort hält Android sie
+  dreißig Tage vor, danach ist sie endgültig gelöscht. Eine Notiz zu dieser
+  Aufnahme lässt sich nicht zurückholen; die App sagt das vorher.</li>
+
+  <li><strong>Herzen in die Galerie.</strong> Unter <em>Einstellungen</em>
+  lassen sich die in Yesta vergebenen Herzen in einem Zug in die Galerie
+  übertragen. Weggenommen wird dabei keins.</li>
+</ul>
+
+<p>Einzelne Notizen und Briefe lassen sich in der App löschen. Wer nur den Index
+neu bauen will, findet das unter <em>Einstellungen</em>.</p>
+
+<p>Fotos, die über <em>Als Tag senden</em> empfangen wurden (Abschnitt 5),
+liegen im Album „Yesta“ der Galerie. Sie bleiben dort auch nach dem
+Deinstallieren, wie jedes andere Foto, und lassen sich in der Galerie
+löschen.</p>
 
 <p><strong>Gesichtsabdrücke lassen sich einzeln löschen</strong>, ohne die App
 zu deinstallieren: <em>Einstellungen → Gesichter zusammenfassen</em> abschalten
