@@ -15,7 +15,7 @@
 <a class="back" href="index.html">← Yesta</a>
 
 <h1>Privacy policy</h1>
-<p class="stand">As of 14 August 2026 · Applies to the Android app Yesta from version 1.12.0 · <a href="../datenschutz.html">Deutsch</a></p>
+<p class="stand">As of 5 September 2026 · Applies to the Android app Yesta from version 1.32.0 · <a href="../datenschutz.html">Deutsch</a></p>
 
 <div class="kasten">
   <p><strong>In short: Yesta sends nothing.</strong> The app does not even
@@ -48,6 +48,9 @@ a database that exists only on the device. It contains:</p>
     <tr><td>Reference to the photo or video, capture time, folder name, file name</td><td>the device's photo library</td></tr>
     <tr><td>Image dimensions, camera model, orientation</td><td>the shot's EXIF data</td></tr>
     <tr><td>Rating by sharpness, exposure, colourfulness</td><td>computed by Yesta on the device</td></tr>
+    <tr><td><strong>Face prints and person groups</strong></td><td><strong>only after explicit consent</strong> — see section 2.1</td></tr>
+    <tr><td>Labels for what a picture shows (“beach”, “Christmas”) with a confidence value</td><td>computed by Yesta on the device</td></tr>
+    <tr><td>Scaled-down copies of individual shots, so lists appear quickly</td><td>created by Yesta on the device, in the private app directory, clearable under <em>Settings</em></td></tr>
     <tr><td>Place name (“Hamburg, Germany”)</td><td>see section 3</td></tr>
     <tr><td>Notes you write about days and about individual shots</td><td>your input</td></tr>
     <tr><td>Special days you enter yourself</td><td>your input</td></tr>
@@ -66,6 +69,60 @@ private app directory and cannot be read by other apps. Android's system backup
 is explicitly switched off (<code>allowBackup="false"</code>) — nothing goes to
 Google Drive automatically either.</p>
 
+<h2>2.1 Faces — and why Yesta asks first</h2>
+
+<p>Yesta can recognise faces in your photos and put pictures of the same person
+together. To do so it computes a number for each face it finds: a
+<strong>face print</strong>.</p>
+
+<p><strong>That is biometric data</strong> within the meaning of Article 9(1)
+GDPR. Processing it is prohibited in principle, and here it rests solely on
+your <strong>explicit consent</strong> under Article 9(2)(a).</p>
+
+<h3>How consent is obtained</h3>
+
+<p>On first launch — and, on a device where Yesta is already installed, on the
+first launch after updating to 1.32.0 — the app asks: <em>“May Yesta group
+faces?”</em> The question cannot be swiped away; it has two buttons, and one of
+them has to be pressed. <strong>While it is unanswered, no face print is
+created.</strong> If you dismiss it without answering, it returns on the next
+launch.</p>
+
+<h3>What happens to the prints</h3>
+
+<div class="tabelle">
+<table>
+  <tbody>
+    <tr><td>Where they are created</td><td>on this device, with a bundled model</td></tr>
+    <tr><td>Where they stay</td><td>in the database in the private app directory</td></tr>
+    <tr><td>Where they go</td><td>nowhere. Yesta does not hold the <code>INTERNET</code> permission</td></tr>
+    <tr><td>Who sees them</td><td>only you, on this device</td></tr>
+    <tr><td>What for</td><td>to group pictures of the same person. Nothing else</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p><strong>No identification against any outside database takes place.</strong>
+Yesta does not know who is in a photo; it only establishes that two faces
+resemble each other. A group gets a name only when you type one in — and that
+name is your input, not a recognition.</p>
+
+<h3>Withdrawing consent</h3>
+
+<p>You can withdraw your consent at any time under <em>Settings → Group
+faces</em>. Withdrawal does not merely stop the recognition: it
+<strong>deletes every face print</strong>, all groups and the names you gave
+them. This is final; if you switch the feature on again later, Yesta starts
+over. The app tells you so before switching off. Withdrawal does not affect the
+lawfulness of processing before it (Article 7(3) GDPR).</p>
+
+<h3>If you say no</h3>
+
+<p>Yesta works fully without face recognition: the look back, the calendar,
+notes, search by text, date and labels. Only the row of people in search is
+missing. <strong>Nothing in the app is tied to your consent</strong> other than
+the feature itself.</p>
+
 <h2>3. The one exception: place names</h2>
 
 <p>Shots often contain coordinates. So that “Hamburg” appears instead of
@@ -79,10 +136,11 @@ Yesta.</strong> That is why the app needs no internet permission. Only the
 coordinate is transmitted, never the photo and never any identifier of the
 user.</p>
 
-<p><strong>Can be switched off:</strong> <em>Settings → Show places</em>. After
-that Yesta no longer looks up place names; names already resolved remain on the
-device. Which data Google is responsible for in this process is governed by
-Google's privacy policy.</p>
+<p><strong>Since version 1.25.1 this is switched off.</strong> Unless someone
+turns it on, <em>nothing</em> leaves the device — not even a coordinate. Turn it
+on under <em>Settings → Show places</em>; turn it off again in the same place.
+Names already resolved remain on the device afterwards. Which data Google is
+responsible for during a lookup is governed by Google's privacy policy.</p>
 
 <h2>4. Spoken notes</h2>
 
@@ -169,6 +227,11 @@ they belong to the photo library and are never changed or deleted by Yesta.</p>
 
 <p>Individual notes can be deleted in the app. If you only want to rebuild the
 index, you will find that under <em>Settings</em>.</p>
+
+<p><strong>Face prints can be deleted on their own</strong>, without
+uninstalling: switching off <em>Settings → Group faces</em> deletes them along
+with the groups and names (section 2.1). The same goes for the scaled-down
+copies, which can also be cleared there.</p>
 
 <p>A backup file in a folder you chose yourself remains after uninstalling — it
 belongs to you and lies outside the app.</p>
