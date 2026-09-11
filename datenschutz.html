@@ -13,7 +13,7 @@
 <a class="back" href="index.html">← Yesta</a>
 
 <h1>Datenschutzerklärung</h1>
-<p class="stand">Stand: 14. August 2026 · Gilt für die Android-App Yesta ab Fassung 1.12.0 · <a href="en/privacy.html" hreflang="en">English</a></p>
+<p class="stand">Stand: 5. September 2026 · Gilt für die Android-App Yesta ab Fassung 1.32.0 · <a href="en/privacy.html" hreflang="en">English</a></p>
 
 
 <div class="kasten">
@@ -48,6 +48,9 @@ Darin stehen:</p>
     <tr><td>Verweis auf das Foto oder Video, Aufnahmezeitpunkt, Ordnername, Dateiname</td><td>Fotomediathek des Geräts</td></tr>
     <tr><td>Bildmaße, Kameramodell, Ausrichtung</td><td>EXIF-Angaben der Aufnahme</td></tr>
     <tr><td>Bewertung nach Schärfe, Belichtung, Farbigkeit</td><td>von Yesta auf dem Gerät berechnet</td></tr>
+    <tr><td><strong>Gesichtsabdrücke und Personengruppen</strong></td><td><strong>nur nach ausdrücklicher Zusage</strong> — siehe Abschnitt 2.1</td></tr>
+    <tr><td>Begriffe zu dem, was auf einem Bild zu sehen ist („Strand“, „Weihnachten“) samt Sicherheit</td><td>von Yesta auf dem Gerät berechnet</td></tr>
+    <tr><td>Verkleinerte Kopien einzelner Aufnahmen, um Listen zügig anzuzeigen</td><td>von Yesta auf dem Gerät erzeugt, im privaten App-Verzeichnis, löschbar unter <em>Einstellungen</em></td></tr>
     <tr><td>Ortsname („Hamburg, Deutschland“)</td><td>siehe Abschnitt 3</td></tr>
     <tr><td>Selbst geschriebene Notizen zu Tagen und zu einzelnen Aufnahmen</td><td>Eingabe des Nutzers</td></tr>
     <tr><td>Selbst eingetragene besondere Tage</td><td>Eingabe des Nutzers</td></tr>
@@ -66,6 +69,64 @@ App-Verzeichnis und ist für andere Apps nicht lesbar. Die Systemsicherung von
 Android ist ausdrücklich abgeschaltet (<code>allowBackup="false"</code>) — es
 geht auch nichts automatisch zu Google Drive.</p>
 
+<h2>2.1 Gesichter — und warum Yesta dafür fragt</h2>
+
+<p>Yesta kann Gesichter auf den Fotos erkennen und Bilder derselben Person
+zusammenlegen. Dafür berechnet sie zu jedem gefundenen Gesicht einen
+Zahlenwert, einen <strong>Gesichtsabdruck</strong>.</p>
+
+<p><strong>Das ist ein biometrisches Datum</strong> im Sinne von Art. 9 Abs. 1
+DSGVO. Seine Verarbeitung ist grundsätzlich untersagt und hier allein auf die
+<strong>ausdrückliche Einwilligung</strong> nach Art. 9 Abs. 2 lit. a
+gestützt.</p>
+
+<h3>Wie die Einwilligung eingeholt wird</h3>
+
+<p>Beim ersten Start — und auf einem Gerät, auf dem Yesta schon läuft, beim
+ersten Start nach dem Update auf 1.32.0 — stellt die App die Frage
+<em>„Darf Yesta Gesichter zusammenfassen?“</em>. Die Frage lässt sich nicht
+wegwischen; sie hat zwei Knöpfe, und einer davon muss gedrückt werden.
+<strong>Solange sie unbeantwortet ist, entsteht kein Gesichtsabdruck.</strong>
+Wer sie schließt, ohne zu antworten, bekommt sie beim nächsten Start
+erneut.</p>
+
+<h3>Was mit den Abdrücken geschieht</h3>
+
+<div class="tabelle">
+<table>
+  <tbody>
+    <tr><td>Wo sie entstehen</td><td>auf diesem Gerät, mit einem mitgelieferten Modell</td></tr>
+    <tr><td>Wo sie bleiben</td><td>in der Datenbank im privaten App-Verzeichnis</td></tr>
+    <tr><td>Wohin sie gehen</td><td>nirgendwohin. Yesta hat keine <code>INTERNET</code>-Berechtigung</td></tr>
+    <tr><td>Wer sie sieht</td><td>nur der Nutzer, auf diesem Gerät</td></tr>
+    <tr><td>Wozu</td><td>um Bilder derselben Person zusammenzulegen. Zu nichts sonst</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p><strong>Es findet keine Identifizierung gegen eine fremde Datenbank
+statt.</strong> Yesta weiß nicht, wer auf einem Foto zu sehen ist; sie stellt
+nur fest, dass zwei Gesichter einander ähneln. Einen Namen bekommt eine Gruppe
+erst, wenn der Nutzer ihn selbst einträgt — und dieser Name ist eine Eingabe,
+keine Erkennung.</p>
+
+<h3>Widerruf</h3>
+
+<p>Die Einwilligung lässt sich jederzeit widerrufen, unter
+<em>Einstellungen → Gesichter zusammenfassen</em>. Der Widerruf hält die
+Erkennung nicht nur an, sondern <strong>löscht alle Gesichtsabdrücke</strong>,
+alle Gruppen und die selbst vergebenen Namen. Das ist endgültig; wer die
+Funktion später wieder einschaltet, fängt von vorn an. Die App sagt das vor dem
+Abschalten. Der Widerruf berührt die Rechtmäßigkeit der Verarbeitung bis zu
+seinem Zeitpunkt nicht (Art. 7 Abs. 3 DSGVO).</p>
+
+<h3>Wenn nein</h3>
+
+<p>Yesta funktioniert ohne Gesichtserkennung vollständig weiter: Rückblick,
+Kalender, Notizen, Suche nach Text, Datum und Begriffen. Es fehlt allein die
+Personenreihe in der Suche. <strong>Nichts in der App ist an die Zusage
+gekoppelt</strong>, außer der Funktion selbst.</p>
+
 <h2>3. Die einzige Ausnahme: Ortsnamen</h2>
 
 <p>Aufnahmen enthalten häufig Koordinaten. Damit statt „53.55, 9.99“ der Name
@@ -79,9 +140,11 @@ sondern das System.</strong> Deshalb braucht die App keine Internet-Berechtigung
 Übertragen wird allein die Koordinate, nie das Foto und nie eine Kennung des
 Nutzers.</p>
 
-<p><strong>Abschaltbar:</strong> <em>Einstellungen → Ortsnamen</em>. Danach fragt
-Yesta keine Ortsnamen mehr nach; bereits aufgelöste Namen bleiben auf dem Gerät
-stehen. Für welche Daten Google dabei verantwortlich ist, richtet sich nach den
+<p><strong>Seit Fassung 1.25.1 ist das ausgeschaltet.</strong> Ohne dass jemand
+den Schalter umlegt, verlässt <em>nichts</em> das Gerät — auch keine Koordinate.
+Einschalten unter <em>Einstellungen → Orte anzeigen</em>; ausschalten jederzeit
+ebenda. Bereits aufgelöste Namen bleiben danach auf dem Gerät stehen. Für welche
+Daten Google beim Nachschlagen verantwortlich ist, richtet sich nach den
 Datenschutzbestimmungen von Google.</p>
 
 <h2>4. Gesprochene Notizen</h2>
@@ -172,6 +235,11 @@ gelöscht.</p>
 
 <p>Einzelne Notizen lassen sich in der App löschen. Wer nur den Index neu bauen
 will, findet das unter <em>Einstellungen</em>.</p>
+
+<p><strong>Gesichtsabdrücke lassen sich einzeln löschen</strong>, ohne die App
+zu deinstallieren: <em>Einstellungen → Gesichter zusammenfassen</em> abschalten
+löscht sie samt Gruppen und Namen (Abschnitt 2.1). Dasselbe gilt für die
+verkleinerten Kopien, die dort ebenfalls geleert werden können.</p>
 
 <p>Eine Sicherungsdatei in einem selbst gewählten Ordner bleibt nach dem
 Deinstallieren bestehen — sie gehört dem Nutzer und liegt außerhalb der App.</p>
