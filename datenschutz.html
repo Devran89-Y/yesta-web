@@ -13,7 +13,7 @@
 <a class="back" href="index.html">← Yesta</a>
 
 <h1>Datenschutzerklärung</h1>
-<p class="stand">Stand: 11. September 2026 · Gilt für die Android-App Yesta ab Fassung 1.32.0; was mit <em>ab 1.35.0</em> bezeichnet ist, gilt ab dieser Fassung · <a href="en/privacy.html" hreflang="en">English</a></p>
+<p class="stand">Stand: 14. September 2026 · Gilt für die Android-App Yesta ab Fassung 1.32.0; was mit <em>ab 1.35.0</em>, <em>ab 1.38.0</em> oder <em>ab 1.39.0</em> bezeichnet ist, gilt ab dieser Fassung · <a href="en/privacy.html" hreflang="en">English</a></p>
 
 
 <div class="kasten">
@@ -57,6 +57,7 @@ Darin stehen:</p>
     <tr><td>Selbst geschriebene Notizen zu Tagen und zu einzelnen Aufnahmen</td><td>Eingabe des Nutzers</td></tr>
     <tr><td>Selbst eingetragene besondere Tage</td><td>Eingabe des Nutzers</td></tr>
     <tr><td>Welche Zeiträume oder Aufnahmen ausgeblendet wurden</td><td>Eingabe des Nutzers</td></tr>
+    <tr><td>Namen, die der Nutzer Personengruppen gibt, und welche Personen er ausgeblendet hat</td><td>Eingabe des Nutzers — nur mit Gesichtserkennung, siehe Abschnitt 2.1</td></tr>
     <tr><td>Herzen an Aufnahmen</td><td>Eingabe des Nutzers, oder aus der Galerie übernommen</td></tr>
     <tr><td>Selbst zugeordnete Aufnahmedaten</td><td>Eingabe des Nutzers</td></tr>
     <tr><td>Briefe an später: der Text, der Tag, an dem er geschrieben wurde, der Tag, an dem er aufgehen soll, und wann er geöffnet wurde (<em>ab 1.35.0</em>)</td><td>Eingabe des Nutzers</td></tr>
@@ -122,9 +123,12 @@ keine Erkennung.</p>
 <p>Die Einwilligung lässt sich jederzeit widerrufen, unter
 <em>Einstellungen → Gesichter zusammenfassen</em>. Der Widerruf hält die
 Erkennung nicht nur an, sondern <strong>löscht alle Gesichtsabdrücke</strong>,
-alle Gruppen und die selbst vergebenen Namen. Das ist endgültig; wer die
-Funktion später wieder einschaltet, fängt von vorn an. Die App sagt das vor dem
-Abschalten. Der Widerruf berührt die Rechtmäßigkeit der Verarbeitung bis zu
+alle Gruppen und die selbst vergebenen Namen. Ist eine Notizsicherung
+eingerichtet, schreibt Yesta sie dabei neu — ohne Namen und ohne die Lage von
+Gesichtern (<em>ab 1.39.0</em>, Abschnitt 5). Das ist endgültig; wer die
+Funktion später wieder einschaltet, fängt von vorn an, es sei denn, er liest
+eine ältere Sicherungsdatei ein, die er selbst aufbewahrt hat. Die App sagt das
+vor dem Abschalten. Der Widerruf berührt die Rechtmäßigkeit der Verarbeitung bis zu
 seinem Zeitpunkt nicht (Art. 7 Abs. 3 DSGVO).</p>
 
 <h3>Wenn nein</h3>
@@ -173,6 +177,22 @@ keinen Rückfall auf eine Erkennung über das Netz.</p>
 <p>Es wird keine Tonaufnahme gespeichert. Erkannt wird der Text, und der landet
 im Notizfeld, wo er vor dem Speichern noch geändert werden kann.</p>
 
+<h2>4a. Vorlesen <em>(ab 1.38.0)</em></h2>
+
+<p>Die Tageskarte kann sich vorlesen: das Datum, wie viele Erinnerungen es je
+Jahr gibt, die Namen, die der Nutzer Personen gegeben hat, und die eigene
+Notiz. <strong>Gesprochen wird von der Sprachausgabe des Geräts</strong>
+(Android <code>TextToSpeech</code>) — einer eigenen App auf dem Gerät, meist
+von Google oder vom Gerätehersteller. Yesta übergibt ihr nur diesen Text.</p>
+
+<p><strong>Yesta nimmt ausschließlich Stimmen, die ohne Netz sprechen</strong>,
+und legt die Stimme selbst fest, statt die Wahl der Sprachausgabe zu
+überlassen. Gibt es für die Sprache keine solche Stimme, liest Yesta nicht
+vor — es gibt keinen Rückfall auf eine Stimme über das Netz. Eine neue
+Berechtigung braucht das Vorlesen nicht; Yesta darf nur nachsehen, ob eine
+Sprachausgabe installiert ist. Aufgenommen und gespeichert wird dabei
+nichts.</p>
+
 <h2>5. Was der Nutzer selbst versenden kann</h2>
 
 <p>Vier Wege führen aus der App hinaus. <strong>Alle vier löst der Nutzer aus,
@@ -215,9 +235,15 @@ und bei allen vieren sieht er vorher, was hinausgeht.</strong></p>
   Tagesnotizen, Fotonotizen, besondere Tage, Herzen, Ausblendungen, zugeordnete
   Daten und — <em>ab 1.35.0</em> — die Briefe an später in einen Ordner, den der
   Nutzer selbst aussucht. <strong>Briefe stehen darin im Klartext, auch die noch
-  nicht geöffneten</strong>: Wer die Datei öffnet, kann sie lesen. Wählt er einen
-  Ordner, der mit einem Cloud-Dienst abgeglichen wird, gelangt der Inhalt
-  dorthin — das ist gewollt und liegt in seiner Hand. Die Notizen lassen sich
+  nicht geöffneten</strong>: Wer die Datei öffnet, kann sie lesen.
+  <em>Ab 1.39.0</em> kommen, wenn die Gesichtserkennung eingeschaltet ist, die
+  Namen hinzu, die der Nutzer Personen gegeben hat, und welche Personen er
+  ausgeblendet hat — dazu je Person bis zu zwanzig Hinweise, <strong>auf welchem
+  Foto und an welcher Stelle im Bild</strong> ihr Gesicht zu sehen ist. Daran
+  findet Yesta die Namen auf einem neuen Gerät wieder, sobald dort die Gesichter
+  erkannt sind. <strong>Gesichtsabdrücke stehen nicht in der Datei.</strong>
+  Wählt der Nutzer einen Ordner, der mit einem Cloud-Dienst abgeglichen wird,
+  gelangt der Inhalt dorthin — das ist gewollt und liegt in seiner Hand. Die Notizen lassen sich
   außerdem als Textdatei an eine App eigener Wahl geben; Briefe stehen darin
   nicht. Yesta selbst überträgt nichts.</li>
 </ul>
@@ -309,8 +335,9 @@ löschen.</p>
 
 <p><strong>Gesichtsabdrücke lassen sich einzeln löschen</strong>, ohne die App
 zu deinstallieren: <em>Einstellungen → Gesichter zusammenfassen</em> abschalten
-löscht sie samt Gruppen und Namen (Abschnitt 2.1). Dasselbe gilt für die
-verkleinerten Kopien, die dort ebenfalls geleert werden können.</p>
+löscht sie samt Gruppen und Namen (Abschnitt 2.1) — <em>ab 1.39.0</em> auch die
+Namen in der Notizsicherung. Dasselbe gilt für die verkleinerten Kopien, die
+dort ebenfalls geleert werden können.</p>
 
 <p>Eine Sicherungsdatei in einem selbst gewählten Ordner bleibt nach dem
 Deinstallieren bestehen — sie gehört dem Nutzer und liegt außerhalb der App.</p>
