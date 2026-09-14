@@ -15,7 +15,7 @@
 <a class="back" href="index.html">← Yesta</a>
 
 <h1>Privacy policy</h1>
-<p class="stand">As of 11 September 2026 · Applies to the Android app Yesta from version 1.32.0; anything marked <em>from 1.35.0</em> applies from that version · <a href="../datenschutz.html">Deutsch</a></p>
+<p class="stand">As of 14 September 2026 · Applies to the Android app Yesta from version 1.32.0; anything marked <em>from 1.35.0</em>, <em>from 1.38.0</em> or <em>from 1.39.0</em> applies from that version · <a href="../datenschutz.html">Deutsch</a></p>
 
 <div class="kasten">
   <p><strong>In short: Yesta sends nothing.</strong> The app does not even
@@ -57,6 +57,7 @@ a database that exists only on the device. It contains:</p>
     <tr><td>Notes you write about days and about individual shots</td><td>your input</td></tr>
     <tr><td>Special days you enter yourself</td><td>your input</td></tr>
     <tr><td>Which periods or shots you have hidden</td><td>your input</td></tr>
+    <tr><td>Names you give to groups of people, and which people you have hidden</td><td>your input — only with face grouping, see section 2.1</td></tr>
     <tr><td>Hearts on shots</td><td>your input, or taken over from your gallery</td></tr>
     <tr><td>Capture dates you assigned yourself</td><td>your input</td></tr>
     <tr><td>Letters to later: the text, the day it was written, the day it is to open, and when it was opened (<em>from 1.35.0</em>)</td><td>your input</td></tr>
@@ -119,8 +120,11 @@ name is your input, not a recognition.</p>
 <p>You can withdraw your consent at any time under <em>Settings → Group
 faces</em>. Withdrawal does not merely stop the recognition: it
 <strong>deletes every face print</strong>, all groups and the names you gave
-them. This is final; if you switch the feature on again later, Yesta starts
-over. The app tells you so before switching off. Withdrawal does not affect the
+them. If a note backup is set up, Yesta rewrites it at the same time — without
+names and without where faces were (<em>from 1.39.0</em>, section 5). This is
+final; if you switch the feature on again later, Yesta starts over, unless you
+read in an older backup file you kept yourself. The app tells you so before
+switching off. Withdrawal does not affect the
 lawfulness of processing before it (Article 7(3) GDPR).</p>
 
 <h3>If you say no</h3>
@@ -169,6 +173,21 @@ the network.</p>
 <p>No audio recording is stored. What is recognised is the text, and it goes
 into the note field, where it can still be edited before saving.</p>
 
+<h2>4a. Reading aloud <em>(from 1.38.0)</em></h2>
+
+<p>The day card can read itself aloud: the date, how many memories there are
+for each year, the names you have given to people, and your own note.
+<strong>The speaking is done by the device's text-to-speech service</strong>
+(Android <code>TextToSpeech</code>) — a separate app on the device, usually
+from Google or the device maker. Yesta passes it only this text.</p>
+
+<p><strong>Yesta uses only voices that speak without the network</strong> and
+sets the voice itself rather than leaving the choice to the text-to-speech
+service. If there is no such voice for the language, Yesta does not read
+aloud — there is no fallback to a network voice. Reading aloud needs no new
+permission; Yesta may only check whether a text-to-speech service is
+installed. Nothing is recorded and nothing is stored.</p>
+
 <h2>5. What you can send yourself</h2>
 
 <p>Four paths lead out of the app. <strong>You start all four, and in all
@@ -209,7 +228,13 @@ four you see beforehand what goes out.</strong></p>
   photo notes, special days, hearts, hidden shots, assigned dates and —
   <em>from 1.35.0</em> — letters to later into a folder you pick yourself.
   <strong>Letters are in that file in plain text, including the ones not yet
-  opened</strong>: whoever opens the file can read them. If you choose a folder
+  opened</strong>: whoever opens the file can read them. <em>From 1.39.0</em>,
+  if face grouping is switched on, the names you gave to people and which
+  people you hid are added — together with up to twenty pointers per person
+  saying <strong>on which photo and where in the picture</strong> their face
+  is. That is how Yesta finds the names again on a new device once the faces
+  have been detected there. <strong>No face prints are stored in the
+  file.</strong> If you choose a folder
   that is synchronised with a cloud service, the contents go there — that is
   intended and is in your hands. The notes can also be shared as a text file
   to an app of your choice; letters are not included in it. Yesta itself
@@ -302,8 +327,9 @@ photo, and can be deleted in the gallery.</p>
 
 <p><strong>Face prints can be deleted on their own</strong>, without
 uninstalling: switching off <em>Settings → Group faces</em> deletes them along
-with the groups and names (section 2.1). The same goes for the scaled-down
-copies, which can also be cleared there.</p>
+with the groups and names (section 2.1) — <em>from 1.39.0</em> also the names
+in the note backup. The same goes for the scaled-down copies, which can also be
+cleared there.</p>
 
 <p>A backup file in a folder you chose yourself remains after uninstalling — it
 belongs to you and lies outside the app.</p>
