@@ -291,6 +291,23 @@
     outline: 2px solid var(--coral-bright); outline-offset: 3px;
   }
   .foot-links { display: flex; flex-wrap: wrap; gap: 1.25rem; }
+
+  /* Die drei Bildschirmfotos unter dem Kopf. */
+  .schau { display: grid; gap: clamp(1.25rem, 4vw, 2.25rem); grid-template-columns: 1fr; }
+  .schau figure { margin: 0; display: grid; gap: .85rem; justify-items: center; }
+  .schau img {
+    display: block; width: 100%; max-width: 15rem; height: auto;
+    border-radius: 1.4rem; border: 1px solid var(--line);
+    box-shadow: 0 1.25rem 2.5rem rgba(36, 27, 23, .14);
+    background: var(--surface);
+  }
+  .schau figcaption {
+    color: var(--ink-muted); font-size: .95rem; line-height: 1.5;
+    text-align: center; max-width: 18rem;
+  }
+  @media (min-width: 44rem) {
+    .schau { grid-template-columns: repeat(3, 1fr); align-items: start; }
+  }
 </style>
 </head>
 <body>
@@ -322,6 +339,31 @@
     <div class="status"><span class="dot"></span> Gerade im Familientest · Android · bald im Play Store</div>
   </div>
 </header>
+
+<section class="band plain">
+  <div class="inner">
+    <div class="eyebrow">So sieht das aus</div>
+    <h2>Dein Tag, aus allen Jahren.</h2>
+
+    <div class="schau">
+      <figure>
+        <img src="bilder/01-home.jpg" width="480" height="1040" loading="lazy"
+             alt="Die Tagesübersicht: Überschrift „Dein 1. September“, darunter vier Fotos desselben Kalendertags aus den Jahren 2023 bis heute.">
+        <figcaption>Jeden Morgen dieser Kalendertag — mit deinen Fotos aus allen früheren Jahren.</figcaption>
+      </figure>
+      <figure>
+        <img src="bilder/05-diashow.jpg" width="480" height="1040" loading="lazy"
+             alt="Die Diashow zeigt ein Landschaftsfoto formatfüllend, darunter groß die Jahreszahl 2023 und „Vor 3 Jahren“.">
+        <figcaption>Eine ruhige Diashow durch den Tag — mit der Jahreszahl unter jedem Bild.</figcaption>
+      </figure>
+      <figure>
+        <img src="bilder/04-briefe.jpg" width="480" height="1040" loading="lazy"
+             alt="Die Ansicht „Briefe an später“ mit verschlossenen Briefen und ihrem jeweiligen Öffnungsdatum.">
+        <figcaption>Briefe an später, die sich erst an dem Tag öffnen, den du bestimmst.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
 
 <section class="band">
   <div class="inner">
