@@ -365,6 +365,12 @@
   @media (min-width: 44rem) {
     .schau { grid-template-columns: repeat(3, 1fr); align-items: start; }
   }
+  /* Kennzeichnung der kuenstlich erzeugten Beispielbilder im Stapel. */
+  .stack-hinweis {
+    margin-top: 1.75rem;
+    color: var(--ink-muted);
+    font-size: .8rem;
+  }
 </style>
 </head>
 <body>
@@ -513,13 +519,14 @@
           picture of your own child with a product name on it is no longer a
           memory, it is an advertisement.
         </p>
+        <p class="stack-hinweis">Example images, generated with AI.</p>
       </div>
 
-      <div class="stack" role="img" aria-label="Four instant photos of the same calendar day, laid over one another at an angle: a church with a blue dome (2026), a windmill (2025), a sunset over the sea (2024) and a white village above the bay (2023).">
-        <div class="pola p1"><img src="../bilder/pola-1.jpg" width="300" height="300" loading="lazy" alt=""><b>2026</b></div>
-        <div class="pola p2"><img src="../bilder/pola-2.jpg" width="300" height="300" loading="lazy" alt=""><b>2025</b></div>
-        <div class="pola p3"><img src="../bilder/pola-3.jpg" width="300" height="300" loading="lazy" alt=""><b>2024</b></div>
-        <div class="pola p4"><img src="../bilder/pola-4.jpg" width="300" height="300" loading="lazy" alt=""><b>2023</b></div>
+      <div class="stack" role="img" aria-label="Four instant photos of the same calendar day on a beach, laid over one another at an angle: the same family across four years — in 2023 with a baby in her arms, by 2026 both children stand on their own and have visibly grown.">
+        <div class="pola p1"><img src="../bilder/pola-1.jpg" width="300" height="300" loading="lazy" alt=""><b>2023</b></div>
+        <div class="pola p2"><img src="../bilder/pola-2.jpg" width="300" height="300" loading="lazy" alt=""><b>2024</b></div>
+        <div class="pola p3"><img src="../bilder/pola-3.jpg" width="300" height="300" loading="lazy" alt=""><b>2025</b></div>
+        <div class="pola p4"><img src="../bilder/pola-4.jpg" width="300" height="300" loading="lazy" alt=""><b>2026</b></div>
       </div>
     </div>
   </div>

@@ -365,6 +365,12 @@
   @media (min-width: 44rem) {
     .schau { grid-template-columns: repeat(3, 1fr); align-items: start; }
   }
+  /* Kennzeichnung der kuenstlich erzeugten Beispielbilder im Stapel. */
+  .stack-hinweis {
+    margin-top: 1.75rem;
+    color: var(--ink-muted);
+    font-size: .8rem;
+  }
 </style>
 </head>
 <body>
@@ -513,13 +519,14 @@
           ein Bild vom eigenen Kind mit einem Produktnamen darauf ist keine
           Erinnerung mehr, sondern eine Anzeige.
         </p>
+        <p class="stack-hinweis">Beispielbilder, mit KI erzeugt.</p>
       </div>
 
-      <div class="stack" role="img" aria-label="Vier Sofortbilder vom selben Kalendertag, schräg übereinandergelegt: eine Kirche mit blauer Kuppel (2026), eine Windmühle (2025), ein Sonnenuntergang über dem Meer (2024) und ein weißes Dorf über der Bucht (2023).">
-        <div class="pola p1"><img src="bilder/pola-1.jpg" width="300" height="300" loading="lazy" alt=""><b>2026</b></div>
-        <div class="pola p2"><img src="bilder/pola-2.jpg" width="300" height="300" loading="lazy" alt=""><b>2025</b></div>
-        <div class="pola p3"><img src="bilder/pola-3.jpg" width="300" height="300" loading="lazy" alt=""><b>2024</b></div>
-        <div class="pola p4"><img src="bilder/pola-4.jpg" width="300" height="300" loading="lazy" alt=""><b>2023</b></div>
+      <div class="stack" role="img" aria-label="Vier Sofortbilder vom selben Kalendertag am Strand, schräg übereinandergelegt: dieselbe Familie in vier Jahren — 2023 mit einem Baby auf dem Arm, 2026 stehen beide Kinder allein und sind sichtbar gewachsen.">
+        <div class="pola p1"><img src="bilder/pola-1.jpg" width="300" height="300" loading="lazy" alt=""><b>2023</b></div>
+        <div class="pola p2"><img src="bilder/pola-2.jpg" width="300" height="300" loading="lazy" alt=""><b>2024</b></div>
+        <div class="pola p3"><img src="bilder/pola-3.jpg" width="300" height="300" loading="lazy" alt=""><b>2025</b></div>
+        <div class="pola p4"><img src="bilder/pola-4.jpg" width="300" height="300" loading="lazy" alt=""><b>2026</b></div>
       </div>
     </div>
   </div>
