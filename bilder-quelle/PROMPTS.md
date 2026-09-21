@@ -227,3 +227,67 @@ Kuenstlich erzeugte Bilder, die echt wirken, sind seit dem 2. August 2026 nach
 der EU-KI-Verordnung (Art. 50) zu kennzeichnen. Unter dem Stapel kommt deshalb
 eine kleine Zeile "Beispielbilder, kuenstlich erzeugt", in allen drei Sprachen.
 (Einschaetzung, keine Rechtsberatung.)
+
+---
+
+# Zwei Motive fuer die Werbebilder
+
+Beide zeigen **dieselbe Familie** wie die Vierer-Reihe — das Bild **2023 als
+Referenz mitgeben**. Sie liegen als ganzflaechiger Grund hinter dem Text,
+deshalb **Hochformat** und viel ruhige Flaeche oben und unten.
+
+Ablegen als `brief-schreiben.png` und `geschenk.png` in diesem Ordner.
+
+## 1. "Ein Brief an spaeter" — story-03 (Hochformat 9:16)
+
+    Create a portrait 9:16 photograph, at least 1024 x 1820 pixels.
+    Same family as in the reference image, three years later.
+
+    THE MOMENT — late evening, long after the children are asleep. The
+    mother, now 36, sits alone at the kitchen table in the warm pool of a
+    single lamp, writing on her phone with both thumbs. Her hair is tied up
+    carelessly, she is in a worn t-shirt, bare feet on the chair rung. A cold
+    cup of tea, a child's drawing held to the fridge behind her, one toy left
+    on the floor at the edge of the frame. The rest of the room is dark.
+
+    She is not smiling for anyone. She is concentrating, a little tired,
+    somewhere between the day that just ended and something she wants to say
+    later.
+
+    COMPOSITION — she sits in the lower third, the dark room fills the upper
+    half: room for a headline above her and a line of text below. Shot from
+    across the table, slightly to the side, never straight on.
+
+    STYLE — a real photo taken by someone else in the room, not a staged
+    one. Warm lamplight, deep shadows, fine grain, slight motion blur in her
+    hands. Not a stock photo, no perfect kitchen, no styled props.
+
+    DO NOT INCLUDE — no other adults, no visible children, no text on the
+    phone screen, no readable writing anywhere, no watermark, no logo, no
+    date stamp, nobody looking into the camera.
+
+## 2. "Das schoenste Geschenk fuer dein Kind?" — beitrag-02 (Hochformat 3:4)
+
+    Create a portrait 3:4 photograph, at least 1024 x 1365 pixels.
+    Same family as in the reference image, three years later.
+
+    THE MOMENT — a child's bedroom at night, lit only by a small nightlight.
+    The son, now 3 and a half, is asleep on his side, one arm around the same
+    grey stuffed rabbit, now worn and missing an ear. His father sits on the
+    edge of the bed in the half-dark, phone in one hand, the other hand
+    resting on the blanket near the boy's back. The father's face is lit from
+    below by the screen; his beard is trimmed short and grey at the sides.
+
+    He is looking at the sleeping child, not at the phone.
+
+    COMPOSITION — the bed runs across the lower two-thirds, dark wall above
+    with room for a headline. The child in the foreground, the father behind
+    and slightly out of focus.
+
+    STYLE — a real photo from a phone gallery: high ISO, visible grain, warm
+    orange nightlight, deep shadows, slightly soft. Not a stock photo, no
+    designer nursery.
+
+    DO NOT INCLUDE — no other children, no other adults, no text on the phone
+    screen, no readable writing, no watermark, no logo, no date stamp, nobody
+    looking into the camera, nothing cute or posed.
