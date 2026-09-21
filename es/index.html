@@ -1,27 +1,27 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Yesta — more than a diary</title>
-<meta name="description" content="Yesta shows you every day what you lived through on the same date in earlier years, and asks one question: what happened today? Everything stays on your phone.">
-<link rel="canonical" href="https://yesta.app/en/">
+<title>Yesta — más que un diario</title>
+<meta name="description" content="Yesta te enseña cada mañana esta misma fecha de todos los años anteriores y te hace una pregunta: ¿Qué pasó hoy? Todo se queda en tu dispositivo.">
+<link rel="canonical" href="https://yesta.app/es/">
 <link rel="alternate" hreflang="de" href="https://yesta.app/">
 <link rel="alternate" hreflang="en" href="https://yesta.app/en/">
 <link rel="alternate" hreflang="es" href="https://yesta.app/es/">
 <link rel="alternate" hreflang="x-default" href="https://yesta.app/">
-<meta property="og:title" content="Yesta — more than a diary">
-<meta property="og:description" content="What happened today? One sentence is enough. Next year you'll read it again.">
+<meta property="og:title" content="Yesta — más que un diario">
+<meta property="og:description" content="¿Qué pasó hoy? Basta una frase. El año que viene volverás a leerla.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Yesta">
-<meta property="og:locale" content="en_US">
+<meta property="og:locale" content="es_ES">
 <meta property="og:locale:alternate" content="de_DE">
-<meta property="og:locale:alternate" content="es_ES">
-<meta property="og:url" content="https://yesta.app/en/">
-<meta property="og:image" content="https://yesta.app/en/bilder/vorschau.jpg">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:url" content="https://yesta.app/es/">
+<meta property="og:image" content="https://yesta.app/es/bilder/vorschau.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Yesta — more than a diary. A phone shows the 1st of September with four photos from earlier years, an instant photo from 2024 in front of it.">
+<meta property="og:image:alt" content="Yesta — más que un diario. Un teléfono muestra el 1 de septiembre con cuatro fotos de años anteriores y, delante, una polaroid de 2024.">
 <meta name="twitter:card" content="summary_large_image">
 <style>
   :root {
@@ -80,7 +80,7 @@
 
   h1, h2, h3 { text-wrap: balance; letter-spacing: -.025em; margin: 0; }
 
-  /* ---------------- Head band ---------------- */
+  /* ---------------- Kopfband ---------------- */
 
   .hero {
     background: var(--ground-deep);
@@ -135,7 +135,7 @@
 
   .hero-body strong { color: var(--ink-inverse); font-weight: 600; }
 
-  /* The note card — the same object the app shows. */
+  /* Die Notizkarte — dasselbe Objekt, das die App zeigt. */
   .note-card {
     margin-top: clamp(2.5rem, 6vw, 3.5rem);
     max-width: 30rem;
@@ -183,7 +183,7 @@
     background: var(--coral-bright); flex: none;
   }
 
-  /* ---------------- Sections ---------------- */
+  /* ---------------- Abschnitte ---------------- */
 
   .eyebrow {
     font-size: .72rem;
@@ -214,12 +214,12 @@
     margin-bottom: .5rem;
   }
 
-  /* ---------------- What it does not do ---------------- */
+  /* ---------------- Was es nicht tut ---------------- */
 
   .plain { background: var(--surface); border-block: 1px solid var(--line); }
 
-  /* Four cards, so two by two. An „auto-fit" grid put three in a row on wide
-     screens and left an empty grey cell next to them. */
+  /* Vier Karten, also zwei mal zwei. Ein „auto-fit"-Raster ergab auf breiten
+     Schirmen drei Spalten und eine leere graue Zelle daneben. */
   .facts {
     margin-top: clamp(1.8rem, 4vw, 2.5rem);
     display: grid;
@@ -272,7 +272,7 @@
     padding: .06em .3em;
   }
 
-  /* ---------------- The shared picture ---------------- */
+  /* ---------------- Das geteilte Bild ---------------- */
 
   .share-layout {
     margin-top: clamp(2rem, 5vw, 3rem);
@@ -300,8 +300,8 @@
     padding: 6% 6% 15%;
     box-shadow: 0 1px 2px rgba(0,0,0,.18), 0 14px 26px -14px rgba(0,0,0,.5);
   }
-  /* "height: auto" is needed, otherwise the image's height attribute wins and
-     the instant photo comes out 300 pixels tall instead of square. */
+  /* "height: auto" hace falta: si no, gana el atributo height de la imagen y
+     la polaroid sale de 300 píxeles de alto en vez de cuadrada. */
   .pola img {
     display: block;
     width: 100%;
@@ -320,20 +320,19 @@
     font-weight: 600;
     color: #2A211C;
   }
-  /* Each year moves to the side the next instant photo leaves free - in the
-     middle it disappeared underneath. The topmost one stays centred. */
+  /* Cada año se corre al lado que deja libre la polaroid siguiente - en el
+     centro desaparecía debajo. La de arriba se queda centrada. */
   .p1 b, .p3 b { text-align: left; }
   .p2 b { text-align: right; }
-  /* Two rows of two rather than one column: as a column every instant photo
-     covered the year of the one above it - the overlap was bigger than the
-     white margin the year sits on. This way each year stays in the clear and
-     the bottom picture stays inside the frame. */
+  /* Dos filas de dos en vez de una columna: en columna, cada polaroid tapaba
+     el año de la anterior - el solape era mayor que el margen blanco donde va
+     el año. Así cada año queda a la vista y la última no se sale del marco. */
   .p1 { left:  0%; top:  0%; transform: rotate(-5deg); }
   .p2 { right: 0%; top:  4%; transform: rotate( 4deg); }
   .p3 { left:  2%; top: 46%; transform: rotate(-3deg); }
   .p4 { right: 2%; top: 52%; transform: rotate( 5deg); }
 
-  /* ---------------- Foot ---------------- */
+  /* ---------------- Fuß ---------------- */
 
   footer {
     background: var(--ground-deep);
@@ -344,7 +343,7 @@
   footer .inner { display: grid; gap: 1.5rem; }
   footer a { color: var(--ink-inverse); text-decoration: underline; text-underline-offset: .18em; }
   footer a:hover { color: var(--coral-bright); }
-  footer a:focus-visible, .status:focus-visible, .lang:focus-visible {
+  footer a:focus-visible, .status:focus-visible {
     outline: 2px solid var(--coral-bright); outline-offset: 3px;
   }
   .foot-links { display: flex; flex-wrap: wrap; gap: 1.25rem; }
@@ -373,54 +372,54 @@
   <div class="inner">
     <div class="brandline">
       <div class="brand">Yesta</div>
-      <nav class="langs" aria-label="Language">
+      <nav class="langs" aria-label="Idioma">
         <a class="lang" href="../index.html" hreflang="de" lang="de">Deutsch</a>
-        <span class="lang" aria-current="true">English</span>
-        <a class="lang" href="../es/index.html" hreflang="es" lang="es">Español</a>
+        <a class="lang" href="../en/index.html" hreflang="en" lang="en">English</a>
+        <span class="lang" aria-current="true">Español</span>
       </nav>
     </div>
 
-    <h1>Nobody keeps a diary going. <span class="quiet">You don't have to either.</span></h1>
+    <h1>Nadie consigue seguir un diario. <span class="quiet">Tú tampoco tienes que hacerlo.</span></h1>
 
     <p class="hero-body">
-      Everyone gives up after three weeks — because a blank page in the evening
-      is a debt you owe. But <strong>anyone can say what a day was, once they
-      are shown a picture of it.</strong>
+      El intento se viene abajo a las tres semanas, a todo el mundo — porque la
+      hoja en blanco de la noche es una deuda. Pero <strong>cualquiera sabe
+      decir cómo ha sido un día si le ponen delante una imagen de él.</strong>
     </p>
 
     <div class="note-card">
-      <p class="ask">What happened today?</p>
-      <p class="hint">One sentence is enough. In a year you will be glad you wrote it.</p>
+      <p class="ask">¿Qué pasó hoy?</p>
+      <p class="hint">Basta una frase. Dentro de un año te alegrarás de haberla escrito.</p>
       <p class="written">
-        First day without training wheels. Four metres, then the grass.
-        <span class="stamp">14 August 2025 · shows up again on 14 August 2026</span>
+        Primer día sin ruedines. Cuatro metros y a la hierba.
+        <span class="stamp">14 de agosto de 2025 · vuelve a estar ahí el 14 de agosto de 2026</span>
       </p>
     </div>
 
-    <div class="status"><span class="dot"></span> Currently in family testing · Android · coming to the Play Store</div>
+    <div class="status"><span class="dot"></span> Ahora en pruebas con la familia · Android · pronto en Play Store</div>
   </div>
 </header>
 
 <section class="band plain">
   <div class="inner">
-    <div class="eyebrow">What it looks like</div>
-    <h2>Your day, from every year.</h2>
+    <div class="eyebrow">Así se ve</div>
+    <h2>Tu día, de todos los años.</h2>
 
     <div class="schau">
       <figure>
-        <img src="bilder/01-home.jpg" width="480" height="1040" loading="lazy"
-             alt="The day view: the heading “Your 1 September”, below it four photos of the same calendar day from 2023 onwards.">
-        <figcaption>Every morning, this calendar day — with your own photos from all the years before.</figcaption>
+        <img src="bilder/01-hoy.jpg" width="480" height="1040" loading="lazy"
+             alt="La vista del día: el título «Tu 1 de septiembre» y debajo cuatro fotos de esa misma fecha, de 2023 hasta hoy.">
+        <figcaption>Cada mañana, esta misma fecha — con tus fotos de todos los años anteriores.</figcaption>
       </figure>
       <figure>
-        <img src="bilder/03-month.jpg" width="480" height="1040" loading="lazy"
-             alt="The month view: a calendar grid in which every day of September carries the photo that was taken on it.">
-        <figcaption>A whole month at a glance — every day with the picture that belongs to it.</figcaption>
+        <img src="bilder/03-mes.jpg" width="480" height="1040" loading="lazy"
+             alt="La vista del mes: una cuadrícula de calendario en la que cada día de septiembre lleva la foto que se hizo ese día.">
+        <figcaption>Un mes entero de un vistazo — cada día con la imagen que le pertenece.</figcaption>
       </figure>
       <figure>
-        <img src="bilder/04-letters.jpg" width="480" height="1040" loading="lazy"
-             alt="The “Letters to later” view showing sealed letters and the date each one opens.">
-        <figcaption>Letters to later that stay sealed until the day you choose.</figcaption>
+        <img src="bilder/04-cartas.jpg" width="480" height="1040" loading="lazy"
+             alt="La vista «Cartas para más adelante», con cartas cerradas y la fecha en que cada una se abre.">
+        <figcaption>Cartas para más adelante, que no se abren hasta el día que tú decidas.</figcaption>
       </figure>
     </div>
   </div>
@@ -428,32 +427,32 @@
 
 <section class="band">
   <div class="inner">
-    <div class="eyebrow">How it works</div>
-    <h2>Three moves, two of which the app makes.</h2>
+    <div class="eyebrow">Cómo funciona</div>
+    <h2>Tres pasos, y dos los da la app.</h2>
 
     <div class="steps">
       <div class="step">
         <span class="num">01</span>
-        <h3>Yesta looks back</h3>
+        <h3>Yesta mira atrás</h3>
         <p>
-          Every morning it brings up this calendar day from all your earlier
-          years — from your photo library, right on the device.
+          Cada mañana saca esta misma fecha de todos los años anteriores — de
+          tu galería de fotos, directamente en el dispositivo.
         </p>
       </div>
       <div class="step">
         <span class="num">02</span>
-        <h3>You answer</h3>
+        <h3>Tú contestas</h3>
         <p>
-          One sentence about today. Typed or spoken. Even about days there is
-          not a single photo of.
+          Una frase sobre hoy. Escrita o dictada. También sobre los días de los
+          que no hay ni una sola foto.
         </p>
       </div>
       <div class="step">
         <span class="num">03</span>
-        <h3>Next year it is there</h3>
+        <h3>El año que viene sigue ahí</h3>
         <p>
-          Next to today's pictures. That is how a diary comes about without you
-          ever having started one.
+          Al lado de las fotos de hoy. Así nace un diario sin que lo hayas
+          empezado nunca.
         </p>
       </div>
     </div>
@@ -462,60 +461,59 @@
 
 <section class="band plain">
   <div class="inner">
-    <div class="eyebrow">What Yesta does not do</div>
-    <h2>No account. No cloud. No subscription.</h2>
+    <div class="eyebrow">Lo que Yesta no hace</div>
+    <h2>Sin cuenta. Sin nube. Sin suscripción.</h2>
     <p>
-      This is not a setting you can flip — it is how the app is built.
+      No es un ajuste que se pueda cambiar — es la forma en que está hecha.
     </p>
 
     <div class="facts">
       <div class="fact">
-        <h3>No server</h3>
-        <p>There isn't one. Your photos and notes stay where they were made.</p>
+        <h3>Sin servidor</h3>
+        <p>No hay ninguno. Tus fotos y tus notas se quedan donde nacieron.</p>
       </div>
       <div class="fact">
-        <h3>No sign-in</h3>
-        <p>No account, no email address, no password. The app asks for none of it.</p>
+        <h3>Sin registro</h3>
+        <p>Sin cuenta, sin correo, sin contraseña. La app no pide nada de eso.</p>
       </div>
       <div class="fact">
-        <h3>No advertising</h3>
-        <p>And no analysis of your behaviour. There is nobody for anything to go to.</p>
+        <h3>Sin publicidad</h3>
+        <p>Y sin análisis de lo que haces. No hay nadie a quien pudiera ir a parar.</p>
       </div>
       <div class="fact">
-        <h3>No subscription</h3>
-        <p>The full history is free. What costs money later is a one-time purchase.</p>
+        <h3>Sin suscripción</h3>
+        <p>Todo tu historial es gratis. Lo que más adelante cueste, se paga una sola vez.</p>
       </div>
     </div>
 
     <p class="proof">
-      <strong>Verifiable, not merely claimed:</strong> Yesta does not even
-      request the <code>INTERNET</code> permission. The app is technically
-      unable to open a network connection — it works in flight mode exactly as
-      it does otherwise.
+      <strong>Comprobable, no prometido:</strong> Yesta ni siquiera pide el
+      permiso <code>INTERNET</code>. Técnicamente no puede abrir ninguna
+      conexión a la red — funciona en modo avión igual que siempre.
     </p>
   </div>
 </section>
 
 <section class="band">
   <div class="inner">
-    <div class="eyebrow">Passing it on</div>
-    <h2>One day across five years, as a single picture.</h2>
+    <div class="eyebrow">Compartir</div>
+    <h2>Un mismo día a lo largo de cinco años, en una sola imagen.</h2>
 
     <div class="share-layout">
       <div>
         <p>
-          A calendar day becomes a picture that looks like photos on a table:
-          laid over one another, slightly turned, the year underneath. The
-          arrangement is different every time.
+          Una fecha se convierte en una imagen que parece un montón de fotos
+          sobre la mesa: superpuestas, un poco giradas, con el año debajo. La
+          disposición es distinta cada vez.
         </p>
         <p>
-          No watermark, no logo. The photo belongs to you, not to the app — a
-          picture of your own child with a product name on it is no longer a
-          memory, it is an advertisement.
+          Sin marca de agua, sin logotipo. La foto es tuya, no de la app — una
+          imagen de tu propio hijo con el nombre de un producto encima ya no es
+          un recuerdo, es un anuncio.
         </p>
       </div>
 
-      <div class="stack" role="img" aria-label="Four instant photos of the same calendar day, laid over one another at an angle: a church with a blue dome (2026), a windmill (2025), a sunset over the sea (2024) and a white village above the bay (2023).">
+      <div class="stack" role="img" aria-label="Cuatro polaroids del mismo día, superpuestas en ángulo: una iglesia de cúpula azul (2026), un molino (2025), una puesta de sol sobre el mar (2024) y un pueblo blanco sobre la bahía (2023).">
         <div class="pola p1"><img src="../bilder/pola-1.jpg" width="300" height="300" loading="lazy" alt=""><b>2026</b></div>
         <div class="pola p2"><img src="../bilder/pola-2.jpg" width="300" height="300" loading="lazy" alt=""><b>2025</b></div>
         <div class="pola p3"><img src="../bilder/pola-3.jpg" width="300" height="300" loading="lazy" alt=""><b>2024</b></div>
@@ -528,16 +526,16 @@
 <footer>
   <div class="inner">
     <div>
-      <strong style="color:var(--ink-inverse)">Yesta</strong> — more than a
-      diary. For Android 10 and later.
+      <strong style="color:var(--ink-inverse)">Yesta</strong> — más que un
+      diario. Para Android 10 o posterior.
     </div>
 
     <div class="foot-links">
-      <a href="privacy.html">Privacy policy</a>
-      <a href="imprint.html">Legal notice</a>
-      <a href="mailto:kontakt@yesta.app">Contact</a>
+      <a href="privacidad.html">Política de privacidad</a>
+      <a href="aviso-legal.html">Aviso legal</a>
+      <a href="mailto:kontakt@yesta.app">Contacto</a>
       <a href="../index.html" hreflang="de" lang="de">Deutsch</a>
-      <a href="../es/index.html" hreflang="es" lang="es">Español</a>
+      <a href="../en/index.html" hreflang="en" lang="en">English</a>
     </div>
 
   </div>

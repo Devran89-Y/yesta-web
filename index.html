@@ -3,11 +3,26 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Yesta — Tagebuch, das bleibt</title>
+<title>Yesta — mehr als ein Tagebuch</title>
 <meta name="description" content="Yesta zeigt dir jeden Tag, was du am selben Datum in früheren Jahren erlebt hast, und stellt eine Frage: Was war heute? Alles bleibt auf deinem Handy.">
-<meta property="og:title" content="Yesta — Tagebuch, das bleibt">
+<link rel="canonical" href="https://yesta.app/">
+<link rel="alternate" hreflang="de" href="https://yesta.app/">
+<link rel="alternate" hreflang="en" href="https://yesta.app/en/">
+<link rel="alternate" hreflang="es" href="https://yesta.app/es/">
+<link rel="alternate" hreflang="x-default" href="https://yesta.app/">
+<meta property="og:title" content="Yesta — mehr als ein Tagebuch">
 <meta property="og:description" content="Was war heute? Ein Satz genügt. Nächstes Jahr liest du ihn wieder.">
 <meta property="og:type" content="website">
+<meta property="og:site_name" content="Yesta">
+<meta property="og:locale" content="de_DE">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="es_ES">
+<meta property="og:url" content="https://yesta.app/">
+<meta property="og:image" content="https://yesta.app/bilder/vorschau.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Yesta — mehr als ein Tagebuch. Ein Handy zeigt den 1. September mit vier Fotos aus früheren Jahren, davor ein Sofortbild von 2024.">
+<meta name="twitter:card" content="summary_large_image">
 <style>
   :root {
     --ground:        #FFFCFA;
@@ -88,6 +103,7 @@
     color: var(--coral-bright);
   }
 
+  .langs { display: flex; gap: 1.1rem; flex: none; }
   .lang {
     font-size: .88rem;
     color: var(--ink-inverse-muted);
@@ -95,6 +111,11 @@
     text-underline-offset: .18em;
   }
   .lang:hover { color: var(--coral-bright); }
+  .lang[aria-current="true"] {
+    color: var(--ink-inverse);
+    text-decoration: none;
+    font-weight: 600;
+  }
 
   .hero h1 {
     font-size: clamp(2.3rem, 7.5vw, 4.4rem);
@@ -197,18 +218,41 @@
 
   .plain { background: var(--surface); border-block: 1px solid var(--line); }
 
+  /* Vier Karten, also zwei mal zwei. Ein „auto-fit"-Raster ergab auf breiten
+     Schirmen drei Spalten und eine leere graue Zelle daneben. */
   .facts {
     margin-top: clamp(1.8rem, 4vw, 2.5rem);
     display: grid;
-    gap: 1px;
-    background: var(--line);
-    border: 1px solid var(--line);
-    border-radius: 12px;
-    overflow: hidden;
-    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+    gap: clamp(.85rem, 2.2vw, 1.15rem);
+    grid-template-columns: 1fr;
   }
-  .fact { background: var(--surface); padding: 1.15rem 1.25rem; }
-  .fact h3 { font-size: 1rem; margin-bottom: .3rem; }
+  @media (min-width: 46rem) { .facts { grid-template-columns: 1fr 1fr; } }
+
+  .fact {
+    background: var(--ground);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.3rem 1.4rem 1.4rem;
+  }
+  .fact h3 {
+    font-size: 1rem;
+    margin-bottom: .45rem;
+    display: flex;
+    align-items: center;
+    gap: .6rem;
+  }
+  .fact h3::before {
+    content: "✕";
+    flex: none;
+    width: 1.55rem; height: 1.55rem;
+    border-radius: 50%;
+    background: var(--coral-wash);
+    color: var(--coral);
+    font-size: .74rem;
+    font-weight: 700;
+    display: grid;
+    place-items: center;
+  }
   .fact p { font-size: .92rem; color: var(--ink-muted); margin: 0; max-width: none; }
 
   .proof {
@@ -235,7 +279,7 @@
     display: grid;
     gap: clamp(2rem, 5vw, 3.5rem);
     grid-template-columns: 1fr;
-    align-items: center;
+    align-items: start;
   }
   @media (min-width: 52rem) {
     .share-layout { grid-template-columns: 1fr minmax(15rem, 20rem); }
@@ -243,7 +287,7 @@
 
   .stack {
     position: relative;
-    aspect-ratio: 9 / 13;
+    aspect-ratio: 2 / 3;
     max-width: 20rem;
     width: 100%;
     justify-self: center;
@@ -256,25 +300,38 @@
     padding: 6% 6% 15%;
     box-shadow: 0 1px 2px rgba(0,0,0,.18), 0 14px 26px -14px rgba(0,0,0,.5);
   }
-  .pola i {
+  /* "height: auto" ist noetig, sonst schlaegt das height-Attribut des Bildes
+     durch und das Sofortbild wird 300 Pixel hoch statt quadratisch. */
+  .pola img {
     display: block;
-    aspect-ratio: 4 / 5;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1;
+    object-fit: cover;
     border-radius: 1px;
-    background: linear-gradient(150deg, var(--a), var(--b));
+    background: var(--line);
   }
   .pola b {
     position: absolute;
-    left: 0; right: 0; bottom: 3.5%;
+    left: 9%; right: 9%; bottom: 3.5%;
     text-align: center;
     font-family: var(--mono);
     font-size: .8rem;
     font-weight: 600;
     color: #2A211C;
   }
-  .p1 { left:  2%; top:  0%; transform: rotate(-5deg);  --a:#8FB6A0; --b:#4E7A63; }
-  .p2 { right: 0%; top: 20%; transform: rotate( 4deg);  --a:#E9B08A; --b:#B5643C; }
-  .p3 { left:  4%; top: 44%; transform: rotate(-3deg);  --a:#9DB2CE; --b:#4E6484; }
-  .p4 { right: 3%; top: 66%; transform: rotate( 5deg);  --a:#D8A0AE; --b:#8E5266; }
+  /* Jede Jahreszahl rueckt auf die Seite, die das naechste Sofortbild frei
+     laesst - mittig verschwand sie darunter. Das oberste bleibt mittig. */
+  .p1 b, .p3 b { text-align: left; }
+  .p2 b { text-align: right; }
+  /* Zwei Reihen zu zweit statt einer Saeule: Als Saeule ueberdeckte jedes
+     Sofortbild die Jahreszahl des darueberliegenden - die Ueberlappung war
+     groesser als der weisse Rand, unter dem die Zahl steht. So liegt jede
+     Zahl im freien Bereich, und das unterste Bild bleibt im Rahmen. */
+  .p1 { left:  0%; top:  0%; transform: rotate(-5deg); }
+  .p2 { right: 0%; top:  4%; transform: rotate( 4deg); }
+  .p3 { left:  2%; top: 46%; transform: rotate(-3deg); }
+  .p4 { right: 2%; top: 52%; transform: rotate( 5deg); }
 
   /* ---------------- Fuß ---------------- */
 
@@ -316,7 +373,11 @@
   <div class="inner">
     <div class="brandline">
       <div class="brand">Yesta</div>
-      <a class="lang" href="en/index.html" hreflang="en">English</a>
+      <nav class="langs" aria-label="Sprache">
+        <span class="lang" aria-current="true">Deutsch</span>
+        <a class="lang" href="en/index.html" hreflang="en" lang="en">English</a>
+        <a class="lang" href="es/index.html" hreflang="es" lang="es">Español</a>
+      </nav>
     </div>
 
     <h1>Niemand führt ein Tagebuch durch. <span class="quiet">Du musst es auch nicht.</span></h1>
@@ -352,9 +413,9 @@
         <figcaption>Jeden Morgen dieser Kalendertag — mit deinen Fotos aus allen früheren Jahren.</figcaption>
       </figure>
       <figure>
-        <img src="bilder/05-diashow.jpg" width="480" height="1040" loading="lazy"
-             alt="Die Diashow zeigt ein Landschaftsfoto formatfüllend, darunter groß die Jahreszahl 2023 und „Vor 3 Jahren“.">
-        <figcaption>Eine ruhige Diashow durch den Tag — mit der Jahreszahl unter jedem Bild.</figcaption>
+        <img src="bilder/03-monat.jpg" width="480" height="1040" loading="lazy"
+             alt="Die Monatsansicht: ein Kalenderraster, in dem jeder Tag des Septembers das Foto trägt, das an diesem Tag entstanden ist.">
+        <figcaption>Ein ganzer Monat auf einen Blick — jeder Tag mit dem Bild, das zu ihm gehört.</figcaption>
       </figure>
       <figure>
         <img src="bilder/04-briefe.jpg" width="480" height="1040" loading="lazy"
@@ -454,11 +515,11 @@
         </p>
       </div>
 
-      <div class="stack" role="img" aria-label="Vier Sofortbilder, schräg übereinandergelegt, beschriftet mit den Jahreszahlen 2026, 2025, 2024 und 2022">
-        <div class="pola p1"><i></i><b>2026</b></div>
-        <div class="pola p2"><i></i><b>2025</b></div>
-        <div class="pola p3"><i></i><b>2024</b></div>
-        <div class="pola p4"><i></i><b>2022</b></div>
+      <div class="stack" role="img" aria-label="Vier Sofortbilder vom selben Kalendertag, schräg übereinandergelegt: eine Kirche mit blauer Kuppel (2026), eine Windmühle (2025), ein Sonnenuntergang über dem Meer (2024) und ein weißes Dorf über der Bucht (2023).">
+        <div class="pola p1"><img src="bilder/pola-1.jpg" width="300" height="300" loading="lazy" alt=""><b>2026</b></div>
+        <div class="pola p2"><img src="bilder/pola-2.jpg" width="300" height="300" loading="lazy" alt=""><b>2025</b></div>
+        <div class="pola p3"><img src="bilder/pola-3.jpg" width="300" height="300" loading="lazy" alt=""><b>2024</b></div>
+        <div class="pola p4"><img src="bilder/pola-4.jpg" width="300" height="300" loading="lazy" alt=""><b>2023</b></div>
       </div>
     </div>
   </div>
@@ -467,15 +528,16 @@
 <footer>
   <div class="inner">
     <div>
-      <strong style="color:var(--ink-inverse)">Yesta</strong> — Tagebuch, das
-      bleibt. Für Android ab Version 10.
+      <strong style="color:var(--ink-inverse)">Yesta</strong> — mehr als ein
+      Tagebuch. Für Android ab Version 10.
     </div>
 
     <div class="foot-links">
       <a href="datenschutz.html">Datenschutzerklärung</a>
       <a href="impressum.html">Impressum</a>
       <a href="mailto:kontakt@yesta.app">Kontakt</a>
-      <a href="en/index.html" hreflang="en">English</a>
+      <a href="en/index.html" hreflang="en" lang="en">English</a>
+      <a href="es/index.html" hreflang="es" lang="es">Español</a>
     </div>
 
   </div>

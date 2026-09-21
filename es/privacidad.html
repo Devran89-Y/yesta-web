@@ -1,0 +1,416 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Política de privacidad — Yesta</title>
+<meta name="description" content="Política de privacidad de la app de Android Yesta. La app no envía nada: sin cuenta, sin servidor, sin permiso de internet.">
+<link rel="alternate" hreflang="de" href="../datenschutz.html">
+<link rel="alternate" hreflang="en" href="../en/privacy.html">
+<link rel="alternate" hreflang="es" href="privacidad.html">
+<link rel="stylesheet" href="../doku.css">
+</head>
+<body>
+<div class="wrap">
+
+<a class="back" href="index.html">← Yesta</a>
+
+<h1>Política de privacidad</h1>
+<p class="stand">Actualizada el 14 de septiembre de 2026 · Se aplica a la app de Android Yesta a partir de la versión 1.32.0; lo marcado como <em>desde 1.35.0</em>, <em>desde 1.38.0</em> o <em>desde 1.39.0</em> rige a partir de esa versión · <a href="../datenschutz.html" hreflang="de" lang="de">Deutsch</a> · <a href="../en/privacy.html" hreflang="en" lang="en">English</a></p>
+
+<div class="kasten">
+  <p><strong>En resumen: Yesta no envía nada.</strong> La app ni siquiera pide
+  el permiso <code>INTERNET</code> — técnicamente no puede abrir ninguna
+  conexión a la red. No hay cuenta, no hay registro, no hay servidor y no hay
+  publicidad.</p>
+  <p>Todas las fotos, todas las notas y todos los cálculos se quedan en el
+  dispositivo — salvo que seas tú quien envíe algo (apartado 5).</p>
+</div>
+
+<h2>1. Responsable</h2>
+
+<div class="anschrift">Devran Yarici
+Georg-Simler-Straße 43
+74206 Bad Wimpfen
+Alemania
+
+Correo: kontakt@yesta.app</div>
+
+<h2>2. Lo que Yesta procesa en el dispositivo</h2>
+
+<p>Yesta lee la galería de fotos del dispositivo y crea con ella su propio
+índice, en una base de datos que solo existe en el dispositivo. Contiene:</p>
+
+<div class="tabelle">
+<table>
+  <thead>
+    <tr><th>Tipo de dato</th><th>Origen</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Referencia a la foto o al vídeo, momento de la toma, nombre de la carpeta, nombre del archivo</td><td>la galería de fotos del dispositivo</td></tr>
+    <tr><td>Dimensiones de la imagen, modelo de cámara, orientación</td><td>los datos EXIF de la toma</td></tr>
+    <tr><td>Las coordenadas de la toma, cuando la cámara las registró</td><td>los datos EXIF de la toma — se quedan en el dispositivo, véase el apartado 3</td></tr>
+    <tr><td>Valoración por nitidez, exposición y colorido</td><td>calculado por Yesta en el dispositivo</td></tr>
+    <tr><td><strong>Patrones faciales y grupos de personas</strong></td><td><strong>solo tras un consentimiento explícito</strong> — véase el apartado 2.1</td></tr>
+    <tr><td>Etiquetas de lo que muestra una imagen («playa», «Navidad») con un valor de confianza</td><td>calculado por Yesta en el dispositivo</td></tr>
+    <tr><td>Copias reducidas de algunas tomas, para que las listas aparezcan rápido</td><td>creadas por Yesta en el dispositivo, en el directorio privado de la app, borrables en <em>Ajustes</em></td></tr>
+    <tr><td>Nombre del lugar («Hamburgo, Alemania»)</td><td>véase el apartado 3</td></tr>
+    <tr><td>Las notas que escribes sobre los días y sobre tomas concretas</td><td>lo que tú escribes</td></tr>
+    <tr><td>Los días señalados que tú introduces</td><td>lo que tú escribes</td></tr>
+    <tr><td>Qué periodos o tomas has ocultado</td><td>lo que tú indicas</td></tr>
+    <tr><td>Los nombres que das a grupos de personas y qué personas has ocultado</td><td>lo que tú escribes — solo con la agrupación de caras, véase el apartado 2.1</td></tr>
+    <tr><td>Los corazones en las tomas</td><td>lo que tú marcas, o tomado de tu galería</td></tr>
+    <tr><td>Las fechas de toma que has asignado tú</td><td>lo que tú indicas</td></tr>
+    <tr><td>Cartas para más adelante: el texto, el día en que se escribió, el día en que debe abrirse y cuándo se abrió (<em>desde 1.35.0</em>)</td><td>lo que tú escribes</td></tr>
+    <tr><td>En cuántos días se abrió la app, cuántas veces desde el widget o un aviso, cuántas veces se reprodujo un pase de fotos y cuántas veces se compartió algo — solo cifras</td><td>contado por Yesta en el dispositivo</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p><strong>Las fotos mismas no se copian.</strong> Yesta guarda referencias a
+las tomas y las lee para mostrarlas. No se crea una segunda colección. La única
+excepción es <em>Enviar como día</em> (apartado 5): crea copias reducidas, y
+las fotos que recibes por esa vía se colocan en tu galería.</p>
+
+<p><strong>Nada de esto se transmite.</strong> La base de datos está en el
+directorio privado de la app y otras apps no pueden leerla. La copia de
+seguridad del sistema Android está desactivada expresamente
+(<code>allowBackup="false"</code>) — tampoco va nada a Google Drive de forma
+automática.</p>
+
+<h2>2.1 Las caras — y por qué Yesta pregunta antes</h2>
+
+<p>Yesta puede reconocer caras en tus fotos y juntar las imágenes de una misma
+persona. Para ello calcula un número por cada cara que encuentra: un
+<strong>patrón facial</strong>.</p>
+
+<p><strong>Eso es un dato biométrico</strong> en el sentido del artículo 9.1
+del RGPD. Su tratamiento está prohibido en principio, y aquí se basa
+únicamente en tu <strong>consentimiento explícito</strong> conforme al artículo
+9.2.a).</p>
+
+<h3>Cómo se obtiene el consentimiento</h3>
+
+<p>En el primer inicio — y, en un dispositivo donde Yesta ya esté instalada, en
+el primer inicio tras actualizar a 1.32.0 — la app pregunta: <em>«¿Puede Yesta
+agrupar caras?»</em>. La pregunta no se puede descartar deslizando; tiene dos
+botones y hay que pulsar uno. <strong>Mientras no se conteste, no se crea
+ningún patrón facial.</strong> Si la cierras sin contestar, vuelve en el
+siguiente inicio.</p>
+
+<h3>Qué pasa con los patrones</h3>
+
+<div class="tabelle">
+<table>
+  <tbody>
+    <tr><td>Dónde se crean</td><td>en este dispositivo, con un modelo incluido en la app</td></tr>
+    <tr><td>Dónde se quedan</td><td>en la base de datos del directorio privado de la app</td></tr>
+    <tr><td>Adónde van</td><td>a ninguna parte. Yesta no tiene el permiso <code>INTERNET</code></td></tr>
+    <tr><td>Quién los ve</td><td>solo tú, en este dispositivo</td></tr>
+    <tr><td>Para qué</td><td>para agrupar imágenes de una misma persona. Nada más</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p><strong>No se identifica a nadie contra ninguna base de datos
+externa.</strong> Yesta no sabe quién sale en una foto; solo constata que dos
+caras se parecen. Un grupo recibe un nombre únicamente cuando tú lo escribes —
+y ese nombre es lo que tú indicas, no un reconocimiento.</p>
+
+<h3>Retirar el consentimiento</h3>
+
+<p>Puedes retirar el consentimiento en cualquier momento en <em>Ajustes →
+Agrupar caras</em>. Retirarlo no solo detiene el reconocimiento:
+<strong>borra todos los patrones faciales</strong>, todos los grupos y los
+nombres que les habías puesto. Si hay una copia de seguridad de notas
+configurada, Yesta la reescribe al mismo tiempo — sin nombres y sin dónde
+estaban las caras (<em>desde 1.39.0</em>, apartado 5). Esto es definitivo; si
+más adelante vuelves a activar la función, Yesta empieza de cero, salvo que
+leas un archivo de copia de seguridad antiguo que hayas guardado tú. La app te
+lo advierte antes de desactivarla. La retirada no afecta a la licitud del
+tratamiento anterior (artículo 7.3 del RGPD).</p>
+
+<h3>Si dices que no</h3>
+
+<p>Yesta funciona por completo sin reconocimiento de caras: la mirada atrás, el
+calendario, las notas, la búsqueda por texto, por fecha y por etiquetas. Solo
+falta la fila de personas en la búsqueda. <strong>Nada más en la app depende de
+tu consentimiento</strong> que la función misma.</p>
+
+<h2>3. La única excepción: los nombres de lugar</h2>
+
+<p>Las tomas suelen contener coordenadas. Para que aparezca «Hamburgo» en lugar
+de «53,55, 9,99», Yesta pasa la coordenada al <strong>servicio de ubicación de
+Android</strong> (<code>android.location.Geocoder</code>). Ese servicio forma
+parte del sistema operativo y normalmente resuelve la consulta a través de la
+red — según el dispositivo, mediante Google.</p>
+
+<p>Conviene entenderlo bien: <strong>esa consulta la hace el sistema, no
+Yesta.</strong> Por eso la app no necesita permiso de internet. Solo se
+transmite la coordenada, nunca la foto y nunca un identificador de la
+persona.</p>
+
+<p><strong>Desde la versión 1.25.1 esto está desactivado.</strong> Mientras
+nadie lo active, <em>no</em> sale nada del dispositivo — ni siquiera una
+coordenada. Se activa en <em>Ajustes → Mostrar lugares</em>; en el mismo sitio
+se vuelve a desactivar. Los nombres ya resueltos se quedan después en el
+dispositivo. De qué datos responde Google durante una consulta lo regula la
+política de privacidad de Google.</p>
+
+<p><strong>Con las coordenadas mismas Yesta trabaja solo en el
+dispositivo</strong> — por ejemplo para <em>Tus capítulos</em> (<em>desde
+1.35.0</em>), que deduce de la fecha y el lugar de tus fotos qué temporadas
+pasaste fuera de casa. Para eso no hace falta ningún nombre de lugar, y no se
+consulta nada.</p>
+
+<h2>4. Notas dictadas</h2>
+
+<p>Las notas se pueden dictar en vez de teclear. Para ello Yesta pide permiso
+para usar el micrófono la primera vez que pulsas el icono del micrófono.</p>
+
+<p><strong>El reconocimiento ocurre en el dispositivo.</strong> Yesta usa
+únicamente el reconocedor propio de Android que funciona sin conexión. Donde no
+lo hay — en dispositivos anteriores a Android 12 o sin el paquete de idioma
+descargado — <strong>el botón del micrófono no aparece siquiera.</strong> No
+hay, a propósito, ningún recurso a un reconocimiento a través de la red.</p>
+
+<p>No se guarda ninguna grabación de audio. Lo que se reconoce es el texto, y
+va al campo de la nota, donde todavía se puede corregir antes de guardar.</p>
+
+<h2>4a. Lectura en voz alta <em>(desde 1.38.0)</em></h2>
+
+<p>La tarjeta del día puede leerse en voz alta: la fecha, cuántos recuerdos hay
+de cada año, los nombres que has puesto a las personas y tu propia nota.
+<strong>Quien habla es el servicio de síntesis de voz del dispositivo</strong>
+(<code>TextToSpeech</code> de Android) — una app aparte en el dispositivo,
+normalmente de Google o del fabricante. Yesta solo le pasa ese texto.</p>
+
+<p><strong>Yesta usa únicamente voces que hablan sin red</strong> y fija ella
+misma la voz en lugar de dejar la elección al servicio de síntesis. Si no hay
+una voz así para el idioma, Yesta no lee en voz alta — no hay recurso a una voz
+de red. La lectura no necesita ningún permiso nuevo; Yesta solo puede comprobar
+si hay un servicio de síntesis instalado. No se graba nada y no se guarda
+nada.</p>
+
+<h2>5. Lo que puedes enviar tú</h2>
+
+<p>Cinco caminos salen de la app. <strong>Los cinco los inicias tú, y en los
+cinco ves antes lo que sale.</strong></p>
+
+<ul>
+  <li><strong>Compartir fotos y collages.</strong> A través del menú de
+  compartir de Android, a la app que tú elijas. Como una sola imagen o como
+  fotos sueltas, tus notas no van nunca — solo el texto que tú mismo escribas
+  en el diálogo de compartir.</li>
+
+  <li><strong>Enviar un día como archivo</strong> (<em>desde 1.35.0</em>).
+  <em>Tarjeta del día → Compartir → Enviar como día</em> empaqueta las mejores
+  tomas de ese día, de los años que marques, en un archivo ZIP: como mucho 24,
+  reducidas a 2048 píxeles como máximo en el lado largo. Al reducirlas se
+  descarta todo lo que llevan las fotos — <strong>sin ubicación, sin
+  cámara</strong>. Solo se vuelven a escribir el momento de la toma y la zona
+  horaria, para que la foto caiga en el día correcto en el dispositivo de quien
+  la recibe. Quien quiera enviar también la ubicación comparte los originales
+  como <em>fotos sueltas</em>. <strong>Tu nota va solo si marcas <em>Enviar
+  también mi nota</em></strong>; esa casilla está desactivada de entrada. La
+  nota queda entonces en el archivo en texto legible, junto con un breve
+  archivo de ayuda para quien no tenga Yesta. Adónde va el archivo lo eliges tú
+  en el menú de compartir de Android. El archivo del directorio privado de la
+  app se borra la próxima vez que envías un día.</li>
+
+  <li><strong>Enviar una carta para más adelante</strong> (<em>desde
+  1.41.0</em>). <em>Yours → Cartas para más adelante → icono de compartir</em>
+  empaqueta en un archivo ZIP una carta que todavía está en camino: el día de
+  destino, el día en que se escribió, el texto de la carta y — si lo pones — un
+  nombre de remitente. <strong>Sin fotos, sin lugar.</strong> El texto de la
+  carta <strong>no se guarda en claro</strong> en el archivo, sino codificado:
+  la idea es que siga cerrada en el teléfono de quien la recibe hasta su día.
+  <strong>Eso es un sobre, no una cerradura</strong> — la clave está en el
+  código fuente de la app, y quien se empeñe puede leer el texto antes de
+  tiempo; un cifrado de verdad necesitaría un secreto que solo conocieran los
+  dos teléfonos, y eso volvería a exigir un servidor. En el teléfono que la
+  recibe, Yesta archiva la carta junto a las propias, cerrada hasta su día;
+  antes solo se ve el día y el remitente, y se decide si se acepta. Adónde va
+  el archivo lo eliges tú en el menú de compartir de Android. El archivo del
+  directorio privado de la app se borra la próxima vez que envías una.</li>
+
+  <li><strong>Opinión e informe de problema.</strong> <em>Rueda dentada →
+  ¿Cómo va?</em> reúne un texto: número de versión, desde cuándo y en cuántos
+  días se ha usado la app, cuántas veces desde el widget o un aviso, y el
+  número de notas, días señalados, tomas ocultas, pases de fotos y veces que se
+  ha compartido algo. <strong>Sin fotos, sin lugares, sin textos de
+  notas.</strong> El texto se muestra entero en la pantalla antes de que pase
+  nada; lo envías con la app que quieras. Un informe de problema contiene
+  además el modelo del dispositivo y la versión de Android. Lo mismo vale para
+  el informe de fallo: tras un cierre inesperado se queda en el dispositivo y
+  se ofrece en el siguiente inicio. Si lo rechazas, se borra.</li>
+
+  <li><strong>Copia de seguridad de las notas.</strong> <em>Yours → Copia de
+  seguridad</em> escribe las notas de los días, las notas de las fotos, los
+  días señalados, los corazones, las tomas ocultas, las fechas asignadas y —
+  <em>desde 1.35.0</em> — las cartas para más adelante en una carpeta que
+  eliges tú. <strong>Las cartas están en ese archivo en texto legible,
+  también las que aún no se han abierto</strong>: quien abra el archivo puede
+  leerlas. <em>Desde 1.39.0</em>, si la agrupación de caras está activada, se
+  añaden los nombres que has puesto a las personas y qué personas has ocultado
+  — junto con hasta veinte referencias por persona que indican <strong>en qué
+  foto y en qué parte de la imagen</strong> está su cara. Así vuelve Yesta a
+  encontrar los nombres en un dispositivo nuevo una vez detectadas allí las
+  caras. <strong>En el archivo no se guarda ningún patrón facial.</strong> Si
+  eliges una carpeta sincronizada con un servicio en la nube, el contenido va
+  allí — eso es lo previsto y está en tus manos. Las notas también se pueden
+  compartir como archivo de texto a la app que quieras; las cartas no van en
+  él. Yesta por sí misma no transmite nada.</li>
+</ul>
+
+<h3>Recibir un día compartido (<em>desde 1.35.0</em>)</h3>
+
+<p>Yesta abre únicamente archivos creados con <em>Enviar como día</em>, y
+muestra lo que hay en uno antes de guardar nada — desde <em>Abrir con</em>, o
+en <em>Yours → Abrir un día compartido</em>. Solo cuando pulsas
+<em>Añadir</em>, Yesta coloca las fotos en el álbum «Yesta» de tu galería
+(Android 10 o posterior) y las añade en el día en que se hicieron; para ello el
+álbum se agrega a tu selección de carpetas. Una nota que venga con ellas se
+guarda solo si marcas <em>Conservar la nota</em>, y queda debajo de una nota
+tuya, nunca encima. La copia del archivo en la caché de la app se borra
+después.</p>
+
+<p>Quien recibe un día recibe fotos de otra persona, y quizá sus palabras, en
+su propio dispositivo. Yesta las trata como las tuyas y no las pasa a ninguna
+parte.</p>
+
+<h2>5a. El enlace de apoyo <em>(desde 1.44.0)</em></h2>
+
+<p>En los ajustes, debajo del aviso de privacidad, hay un botón <em>Invítame a
+un café</em>. Abre la página <code>ko-fi.com/yesta</code> en el navegador del
+dispositivo — eso es todo lo que hace. <strong>Yesta por sí misma no transmite
+nada.</strong> La app no tiene permiso de internet; solo le pasa la dirección
+al navegador, que es una app aparte.</p>
+
+<p>A partir de ahí rigen las reglas habituales de la web: quien explota la
+página (Ko-fi) ve tu dirección IP y pone sus propias cookies, y un pago lo
+gestiona PayPal o Stripe, según lo que elijas. <strong>Yesta no llega a saber
+quién aporta algo</strong> — no hay ningún canal de vuelta a la app, y una
+aportación no desbloquea nada en ella. Si nunca pulsas el botón, para ti no
+cambia nada.</p>
+
+<h2>6. Los permisos en detalle</h2>
+
+<div class="tabelle">
+<table>
+  <thead>
+    <tr><th>Permiso</th><th>Para qué</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><code>READ_MEDIA_IMAGES</code>, <code>READ_MEDIA_VIDEO</code></td><td>Leer la galería de fotos. Ese es el objeto de la app</td></tr>
+    <tr><td><code>READ_MEDIA_VISUAL_USER_SELECTED</code></td><td>Para que, a partir de Android 14, compartir fotos sueltas no cuente como una negativa</td></tr>
+    <tr><td><code>READ_EXTERNAL_STORAGE</code></td><td>Lo mismo en Android 12 y anteriores, donde los dos permisos de arriba todavía no existen</td></tr>
+    <tr><td><code>ACCESS_MEDIA_LOCATION</code></td><td>Sin él, Android 10 y posteriores quitan las coordenadas de toda foto que abra la app</td></tr>
+    <tr><td><code>RECORD_AUDIO</code></td><td>Solo para la nota dictada. Se pide la primera vez que pulsas el micrófono</td></tr>
+    <tr><td><code>POST_NOTIFICATIONS</code></td><td>Para el recuerdo del día y — <em>desde 1.35.0</em> — para una carta para más adelante que se abre hoy. Ese aviso solo dice cuándo se escribió la carta, nunca lo que pone. Desactivado hasta que aceptes</td></tr>
+    <tr><td><code>RECEIVE_BOOT_COMPLETED</code></td><td>Para que el widget vuelva a mostrar el día correcto tras reiniciar</td></tr>
+    <tr><td><code>ACCESS_NETWORK_STATE</code>, <code>WAKE_LOCK</code>, <code>FOREGROUND_SERVICE</code></td><td>Los trae la biblioteca del sistema WorkManager, que mueve las pasadas en segundo plano. Ninguno permite una conexión a la red</td></tr>
+    <tr><td><code>…DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION</code></td><td>Lo crea la biblioteca del sistema AndroidX. Se asegura de que solo Yesta reciba sus propios mensajes internos. Sin datos, sin diálogo</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p><strong>No se pide: <code>INTERNET</code>.</strong> Sin ese permiso, una app
+de Android no puede abrir ninguna conexión a la red.</p>
+
+<h2>7. Sin publicidad, sin analítica, sin cesión</h2>
+
+<p>Yesta no contiene <strong>ninguna</strong> red publicitaria,
+<strong>ningún</strong> servicio de analítica, <strong>ningún</strong> servicio
+de informes de fallo de terceros y <strong>ninguna</strong> herramienta de
+seguimiento de personas. No se ceden datos a terceros, no se venden y no se
+analizan.</p>
+
+<p>El contador de <em>¿Cómo va?</em> cuenta solo en el dispositivo y no
+transmite nada por su cuenta.</p>
+
+<p><strong>Con independencia de esto</strong>, Google Play recoge sus propios
+datos al descargar y actualizar la app (por ejemplo el número de
+instalaciones y, si lo has aceptado, informes de fallo). Yesta no tiene
+influencia sobre ello; se aplica la política de privacidad de Google.</p>
+
+<h2>8. Conservación y borrado</h2>
+
+<p>Todos los datos se quedan en el dispositivo mientras la app esté
+instalada.</p>
+
+<p><strong>Desinstalar borra todo</strong> lo que Yesta haya creado dentro de
+la app — base de datos, notas, cartas, ajustes y contadores. Las fotos mismas
+quedan intactas; pertenecen a la galería.</p>
+
+<p><strong>Yesta nunca cambia ni borra una foto por su cuenta.</strong> Dos
+caminos lo hacen cuando tú lo pides, ambos a partir de Android 11, y en los dos
+Android pregunta en un diálogo propio antes de que pase nada:</p>
+
+<ul>
+  <li><strong>A la papelera.</strong> Desde la vista individual, una toma se
+  puede mover a la papelera de tu galería. Android la guarda allí treinta días;
+  después se borra definitivamente. Una nota sobre esa toma no se puede
+  recuperar; la app lo advierte antes.</li>
+
+  <li><strong>Los corazones a la galería.</strong> En <em>Ajustes</em>, los
+  corazones dados en Yesta se pueden pasar a la galería de una vez. No se quita
+  ninguno.</li>
+</ul>
+
+<p>Las notas y las cartas se pueden borrar una a una en la app. Si solo quieres
+reconstruir el índice, lo encontrarás en <em>Ajustes</em>.</p>
+
+<p>Las fotos recibidas mediante <em>Enviar como día</em> (apartado 5) están en
+el álbum «Yesta» de tu galería. Se quedan allí tras desinstalar, como cualquier
+otra foto, y se borran desde la galería.</p>
+
+<p><strong>Los patrones faciales se pueden borrar por separado</strong>, sin
+desinstalar: desactivar <em>Ajustes → Agrupar caras</em> los borra junto con
+los grupos y los nombres (apartado 2.1) — <em>desde 1.39.0</em>, también los
+nombres de la copia de seguridad de notas. Lo mismo vale para las copias
+reducidas, que también se pueden vaciar ahí.</p>
+
+<p>Un archivo de copia de seguridad en una carpeta elegida por ti permanece
+tras desinstalar — es tuyo y está fuera de la app.</p>
+
+<h2>9. Derechos conforme al RGPD</h2>
+
+<p>Como no se transmite ningún dato personal al responsable, allí no hay
+ninguno que pudiera facilitarse. Los derechos de acceso, rectificación,
+supresión, limitación, oposición y portabilidad (artículos 15 a 21 del RGPD)
+existen igualmente; para cualquier consulta vale la dirección del apartado
+1.</p>
+
+<p>Quien haya enviado una opinión o un informe de problema puede pedir su
+borrado — es la única situación en la que puede haber algo guardado.</p>
+
+<p>Tienes derecho a presentar una reclamación ante una autoridad de control en
+materia de protección de datos.</p>
+
+<h2>10. Menores</h2>
+
+<p>Yesta no está dirigida a menores de 13 años y no recoge datos de ellos a
+sabiendas. Como la app no transmite datos, tampoco surge ningún tratamiento
+fuera de su dispositivo cuando la usan menores.</p>
+
+<h2>11. Cambios</h2>
+
+<p>Si algo cambia en el tratamiento, esta política se ajustará y se actualizará
+la fecha de arriba. Los cambios sustanciales — en particular cualquier
+transmisión de datos, que hoy no existe — se anunciarán además dentro de la
+app.</p>
+
+<div class="kasten">
+  <p><strong>La versión alemana es la vinculante</strong> — esta traducción se
+  ofrece para facilitar la lectura.
+  <a href="../datenschutz.html" hreflang="de" lang="de">A la versión alemana</a></p>
+</div>
+
+<footer>
+  <a href="index.html">Yesta</a> · <a href="aviso-legal.html">Aviso legal</a> · <a href="../datenschutz.html" hreflang="de" lang="de">Deutsch</a> · <a href="../en/privacy.html" hreflang="en" lang="en">English</a>
+</footer>
+
+</div>
+</body>
+</html>
