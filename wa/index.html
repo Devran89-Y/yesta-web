@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Yesta — kostenlos für Android</title>
+<meta name="robots" content="noindex">
+<meta name="description" content="Yesta: dein Tag aus allen Jahren. Kostenlos für Android, ohne Konto, ohne Cloud.">
+<style>
+  :root { color-scheme: light dark; --ground:#FFFCFA; --ink:#241B17; --muted:#7C6A62; --coral:#E04A2C; --line:#E7DCD5; }
+  @media (prefers-color-scheme: dark) { :root { --ground:#171210; --ink:#F4EBE5; --muted:#B6A197; --coral:#FF7C5C; --line:#3A2E28; } }
+  * { box-sizing: border-box; }
+  body { margin:0; min-height:100vh; display:grid; place-items:center; padding:2rem 1.25rem;
+         background:var(--ground); color:var(--ink);
+         font:400 1.0625rem/1.6 "Segoe UI Variable Display","Segoe UI",system-ui,-apple-system,Arial,sans-serif; }
+  main { max-width:26rem; text-align:center; }
+  h1 { font-size:1.5rem; line-height:1.25; margin:0 0 .75rem; }
+  p { color:var(--muted); margin:0 0 1.25rem; }
+  a.knopf { display:inline-block; padding:.85rem 1.5rem; border-radius:999px; text-decoration:none;
+            background:var(--coral); color:#fff; font-weight:600; }
+  a.leise { color:var(--muted); font-size:.9375rem; }
+  .kein-android { display:none; }
+  :root[data-kein-android] .nur-android { display:none; }
+  :root[data-kein-android] .kein-android { display:block; }
+  hr { border:0; border-top:1px solid var(--line); margin:1.75rem 0 1rem; }
+</style>
+</head>
+<body data-quelle="whatsapp" data-kampagne="start">
+<main>
+  <div class="nur-android">
+    <h1>Einen Moment — wir bringen dich zu Google Play.</h1>
+    <p>Falls nichts passiert:</p>
+    <p><a class="knopf ziel" href="https://play.google.com/store/apps/details?id=com.yesta.app">Yesta bei Google Play</a></p>
+  </div>
+  <div class="kein-android">
+    <h1>Yesta gibt es nur für Android.</h1>
+    <p>Die App läuft ganz auf dem Handy, ohne Konto und ohne Cloud — eine
+       Fassung fürs iPhone gibt es bisher nicht.</p>
+    <p><a class="leise" href="https://yesta.app/">Ansehen, worum es geht →</a></p>
+    <hr>
+    <p><a class="leise ziel" href="https://play.google.com/store/apps/details?id=com.yesta.app">Trotzdem zum Play Store</a></p>
+  </div>
+</main>
+<script>
+/* Kurzer Weg in den Store. Android geht sofort weiter; alle anderen sehen,
+   dass es Yesta nur fuer Android gibt - ein toter Play-Link auf dem iPhone
+   verbrennt den ersten Eindruck. Der referrer-Parameter landet in der Play
+   Console unter Nutzerakquisition. Absichtlich inline: eine eigene Datei
+   kann fehlschlagen, und dann faellt genau dieser Schutz aus. */
+(function () {
+  var b = document.body;
+  var ziel = 'https://play.google.com/store/apps/details?id=com.yesta.app&referrer='
+    + encodeURIComponent('utm_source=' + (b.getAttribute('data-quelle') || 'direkt')
+      + '&utm_campaign=' + (b.getAttribute('data-kampagne') || 'start'));
+  var links = document.querySelectorAll('a.ziel');
+  for (var i = 0; i < links.length; i++) { links[i].href = ziel; }
+  if (/android/i.test(navigator.userAgent)) { location.replace(ziel); return; }
+  document.documentElement.setAttribute('data-kein-android', '');
+})();
+</script>
+</body>
+</html>
