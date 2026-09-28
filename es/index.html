@@ -182,6 +182,9 @@
     width: .5rem; height: .5rem; border-radius: 50%;
     background: var(--coral-bright); flex: none;
   }
+  /* Seit dem 28.09.2026 ist die Kapsel der Weg in den Store, kein Hinweis mehr. */
+  a.status { text-decoration: none; transition: border-color .2s ease; }
+  a.status:hover, a.status:focus-visible { border-color: var(--coral-bright); }
 
   /* ---------------- Abschnitte ---------------- */
 
@@ -402,7 +405,7 @@
       </p>
     </div>
 
-    <div class="status"><span class="dot"></span> Ahora en pruebas con la familia · Android · pronto en Play Store</div>
+    <a class="status" href="https://play.google.com/store/apps/details?id=com.yesta.app"><span class="dot"></span> Ya en Google Play · gratis para Android</a>
   </div>
 </header>
 
