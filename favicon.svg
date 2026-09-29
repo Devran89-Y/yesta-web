@@ -1,0 +1,13 @@
+<svg viewBox="0 0 512 512" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+  <rect width="512" height="512" fill="#E07856"/>
+
+  <!-- Die Gruppe misst roh 215 x 166 um ihren Mittelpunkt (257 | 183).
+       Faktor 2,05 laesst rundum knapp sieben Prozent Luft. -->
+  <g id="zeichen" transform="translate(256 256) scale(2.05) translate(-257 -183)">
+    <rect id="hinten" x="0" y="0" width="200" height="151" rx="18"
+          transform="translate(150 108) rotate(-9)" fill="#FFF4EE" opacity="0.46"/>
+    <rect x="156" y="115" width="200" height="151" rx="18" fill="#FFF4EE"/>
+    <circle cx="204" cy="163" r="18.5" fill="#E07856"/>
+    <path d="M172.7 240.8 L222.7 182.1 L264.3 219.9 L297.7 190.5 L339.3 240.8 Z" fill="#E07856"/>
+  </g>
+</svg>
