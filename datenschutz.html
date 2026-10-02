@@ -329,6 +329,34 @@ sich nichts.</p>
 <p><strong>Nicht angefordert: <code>INTERNET</code>.</strong> Ohne diese
 Berechtigung kann eine Android-App keine Netzverbindung öffnen.</p>
 
+<!-- ENTWURF 02.10.2026 fuer die iPhone-Fassung - erst mit deren Start
+     veroeffentlichen. Offen: Ob die Datenbank in die iCloud-Geraetesicherung
+     darf (siehe Uebergabe, Vorbereitung iOS). -->
+<h2>6a. Auf dem iPhone</h2>
+
+<p>Die iPhone-Fassung verarbeitet dieselben Angaben wie in Abschnitt 2
+beschrieben, ebenfalls nur auf dem Gerät. Was sich unterscheidet:</p>
+
+<div class="tabelle">
+<table>
+  <thead>
+    <tr><th>Zugriff oder Ablauf</th><th>Wofür</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Fotomediathek (alle Fotos oder nur ausgewählte)</td><td>Die Fotos und Videos lesen. Das ist der Zweck der App. iOS fragt beim ersten Start; die Wahl lässt sich in den iOS-Einstellungen jederzeit ändern</td></tr>
+    <tr><td>Zur Mediathek hinzufügen</td><td>Nur, wenn der Nutzer selbst ein Bild aus Yesta speichert</td></tr>
+    <tr><td>Fotos aus „iCloud-Fotos“</td><td>Liegt ein Bild nur in iCloud, lädt iOS es zum Anzeigen über das iCloud-Konto des Nutzers. Das ist Apples Dienst, Yesta schickt dabei nichts mit. Für die Auswertungen auf dem Gerät lädt Yesta nichts nach</td></tr>
+    <tr><td>Gesichter</td><td>Gefunden und verglichen mit Apples Bildanalyse „Vision“, die auf dem Gerät läuft. Es gilt alles aus Abschnitt 2.1: Frage beim ersten Start, ohne Zusage kein Gesichtsabdruck, Widerruf unter <em>Einstellungen → Gesichter zusammenfassen</em> löscht alle Abdrücke, Personen und Namen</td></tr>
+    <tr><td>Sicherung</td><td>Unter <em>Einstellungen → Sicherung</em> legt der Nutzer eine Datei mit seinen Notizen, besonderen Tagen, Herzen und Ausblendungen dort ab, wo er will – etwa in iCloud Drive. Yesta schickt sie nirgendwohin</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p><strong>Keine Netzverbindung.</strong> Anders als Android kennt iOS keine
+Berechtigung, die einer App das Netz verwehrt. Die iPhone-Fassung enthält
+aber keinen Code, der eine Verbindung aufbaut, und keine Bibliothek eines
+Dritten, die das täte – keine Werbung, keine Auswertung, keine Absturzmeldung.</p>
+
 <h2>7. Keine Werbung, keine Auswertung, keine Weitergabe</h2>
 
 <p>Yesta enthält <strong>keine</strong> Werbenetzwerke, <strong>keine</strong>
