@@ -19,7 +19,7 @@
 <a class="back" href="index.html">← Yesta</a>
 
 <h1>Política de privacidad</h1>
-<p class="stand">Actualizada el 14 de septiembre de 2026 · Se aplica a la app de Android Yesta a partir de la versión 1.32.0; lo marcado como <em>desde 1.35.0</em>, <em>desde 1.38.0</em> o <em>desde 1.39.0</em> rige a partir de esa versión · <a href="../datenschutz.html" hreflang="de" lang="de">Deutsch</a> · <a href="../en/privacy.html" hreflang="en" lang="en">English</a></p>
+<p class="stand">Actualizada el 23 de octubre de 2026 · Se aplica a la app de Android Yesta a partir de la versión 1.32.0 y a la app para iPhone a partir de la 1.0.0 (apartado 6a); lo marcado como <em>desde 1.35.0</em>, <em>desde 1.38.0</em> o <em>desde 1.39.0</em> rige a partir de esa versión · <a href="../datenschutz.html" hreflang="de" lang="de">Deutsch</a> · <a href="../en/privacy.html" hreflang="en" lang="en">English</a></p>
 
 <div class="kasten">
   <p><strong>En resumen: Yesta no envía nada.</strong> La app ni siquiera pide
@@ -325,6 +325,31 @@ cambia nada.</p>
 
 <p><strong>No se pide: <code>INTERNET</code>.</strong> Sin ese permiso, una app
 de Android no puede abrir ninguna conexión a la red.</p>
+
+<h2>6a. En el iPhone</h2>
+
+<p>La versión para iPhone procesa los mismos datos descritos en el apartado 2,
+también solo en el dispositivo. Lo que cambia:</p>
+
+<div class="tabelle">
+<table>
+  <thead>
+    <tr><th>Acceso o proceso</th><th>Para qué</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Fototeca (todas las fotos o solo las elegidas)</td><td>Leer las fotos y los vídeos. Es el propósito de la app. iOS pregunta en el primer inicio; la elección se puede cambiar en cualquier momento en los Ajustes de iOS</td></tr>
+    <tr><td>Añadir a la fototeca</td><td>Solo cuando tú guardas una imagen desde Yesta</td></tr>
+    <tr><td>Fotos en «Fotos de iCloud»</td><td>Si una imagen solo está en iCloud, iOS la carga para mostrarla a través de tu propia cuenta de iCloud. Es un servicio de Apple; Yesta no envía nada. Para los análisis en el dispositivo Yesta no descarga nada</td></tr>
+    <tr><td>Caras</td><td>Se detectan y comparan con el análisis de imagen «Vision» de Apple, que funciona en el dispositivo. Se aplica todo lo del apartado 2.1: pregunta en el primer inicio, sin consentimiento no hay huellas faciales, retirarlo en <em>Ajustes → Agrupar caras</em> borra todas las huellas, personas y nombres</td></tr>
+    <tr><td>Copia de seguridad</td><td>En <em>Ajustes → Copia de seguridad</em> guardas un archivo con tus notas, días especiales, corazones y elementos ocultos donde quieras, por ejemplo en iCloud Drive. Yesta no lo envía a ningún sitio</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p><strong>Sin conexión a la red.</strong> A diferencia de Android, iOS no tiene
+ningún permiso que impida a una app usar la red. Pero la versión para iPhone
+no contiene código que abra una conexión ni bibliotecas de terceros que lo
+hagan: sin publicidad, sin analítica, sin informes de errores.</p>
 
 <h2>7. Sin publicidad, sin analítica, sin cesión</h2>
 
