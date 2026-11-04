@@ -188,6 +188,9 @@
   /* Seit dem 28.09.2026 ist die Kapsel der Weg in den Store, kein Hinweis mehr. */
   a.status { text-decoration: none; transition: border-color .2s ease; }
   a.status:hover, a.status:focus-visible { border-color: var(--coral-bright); }
+  /* Seit dem iPhone-Start zwei Kapseln nebeneinander, auf schmalen Schirmen untereinander. */
+  .stores { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: clamp(2.5rem, 6vw, 3.5rem); }
+  .stores .status { margin-top: 0; }
 
   /* ---------------- Sections ---------------- */
 
@@ -409,7 +412,10 @@
       </p>
     </div>
 
-    <a class="status" href="https://play.google.com/store/apps/details?id=com.yesta.app&amp;referrer=utm_source%3Dwebsite%26utm_campaign%3Dstart"><span class="dot"></span> Now on Google Play · free for Android</a>
+    <div class="stores">
+      <a class="status" href="https://play.google.com/store/apps/details?id=com.yesta.app&amp;referrer=utm_source%3Dwebsite%26utm_campaign%3Dstart"><span class="dot"></span> Google Play · for Android</a>
+      <a class="status" href="https://apps.apple.com/app/id6823133458?pt=129622336&amp;ct=website&amp;mt=8"><span class="dot"></span> App Store · for iPhone</a>
+    </div>
   </div>
 </header>
 
@@ -506,6 +512,8 @@
       request the <code>INTERNET</code> permission. The app is technically
       unable to open a network connection — it works in flight mode exactly as
       it does otherwise.
+      The iPhone has no such permission; the iPhone version simply contains
+      no code that opens a connection.
     </p>
   </div>
 </section>
@@ -544,7 +552,7 @@
   <div class="inner">
     <div>
       <strong style="color:var(--ink-inverse)">Yesta</strong> — more than a
-      diary. For Android 10 and later.
+      diary. Free for Android 10 and later and iPhone with iOS 17 and later.
     </div>
 
     <div class="foot-links">

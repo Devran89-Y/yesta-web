@@ -6,9 +6,9 @@
 <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<title>Yesta — kostenlos für Android</title>
+<title>Yesta — kostenlos für Android und iPhone</title>
 <meta name="robots" content="noindex">
-<meta name="description" content="Yesta: dein Tag aus allen Jahren. Kostenlos für Android, ohne Konto, ohne Cloud.">
+<meta name="description" content="Yesta: dein Tag aus allen Jahren. Kostenlos für Android und iPhone, ohne Konto, ohne Cloud.">
 <meta property="og:title" content="Yesta – Erinnerungen &amp; Tagebuch">
 <meta property="og:description" content="Jeden Morgen deine Fotos von heute aus früheren Jahren. Ohne Konto, ohne Cloud.">
 <meta property="og:type" content="website">
@@ -32,43 +32,54 @@
   a.knopf { display:inline-block; padding:.85rem 1.5rem; border-radius:999px; text-decoration:none;
             background:var(--coral); color:#fff; font-weight:600; }
   a.leise { color:var(--muted); font-size:.9375rem; }
-  .kein-android { display:none; }
-  :root[data-kein-android] .nur-android { display:none; }
-  :root[data-kein-android] .kein-android { display:block; }
+  .warte, .beide { display:none; }
+  :root[data-weiter] .warte { display:block; }
+  :root[data-beide] .beide { display:block; }
+  .knoepfe { display:flex; flex-direction:column; gap:.75rem; align-items:center; margin-bottom:1.25rem; }
   hr { border:0; border-top:1px solid var(--line); margin:1.75rem 0 1rem; }
 </style>
 </head>
-<body data-quelle="tiktok" data-kampagne="start">
+<body data-apple-pt="129622336" data-quelle="tiktok" data-kampagne="start">
 <main>
-  <div class="nur-android">
-    <h1>Einen Moment — wir bringen dich zu Google Play.</h1>
+  <div class="warte">
+    <h1>Einen Moment — wir bringen dich zu Yesta.</h1>
     <p>Falls nichts passiert:</p>
-    <p><a class="knopf ziel" href="https://play.google.com/store/apps/details?id=com.yesta.app">Yesta bei Google Play</a></p>
+    <div class="knoepfe">
+      <a class="knopf ziel-play" href="https://play.google.com/store/apps/details?id=com.yesta.app">Yesta bei Google Play</a>
+      <a class="knopf ziel-apple" href="https://apps.apple.com/app/id6823133458">Yesta im App Store</a>
+    </div>
   </div>
-  <div class="kein-android">
-    <h1>Yesta gibt es nur für Android.</h1>
-    <p>Die App läuft ganz auf dem Handy, ohne Konto und ohne Cloud — eine
-       Fassung fürs iPhone gibt es bisher nicht.</p>
+  <div class="beide">
+    <h1>Yesta gibt es für Android und iPhone.</h1>
+    <p>Kostenlos, ohne Konto und ohne Cloud – die App läuft ganz auf dem Handy.</p>
+    <div class="knoepfe">
+      <a class="knopf ziel-play" href="https://play.google.com/store/apps/details?id=com.yesta.app">Google Play (Android)</a>
+      <a class="knopf ziel-apple" href="https://apps.apple.com/app/id6823133458">App Store (iPhone)</a>
+    </div>
     <p><a class="leise" href="https://yesta.app/">Ansehen, worum es geht →</a></p>
-    <hr>
-    <p><a class="leise ziel" href="https://play.google.com/store/apps/details?id=com.yesta.app">Trotzdem zum Play Store</a></p>
   </div>
 </main>
 <script>
-/* Kurzer Weg in den Store. Android geht sofort weiter; alle anderen sehen,
-   dass es Yesta nur fuer Android gibt - ein toter Play-Link auf dem iPhone
-   verbrennt den ersten Eindruck. Der referrer-Parameter landet in der Play
-   Console unter Nutzerakquisition. Absichtlich inline: eine eigene Datei
-   kann fehlschlagen, und dann faellt genau dieser Schutz aus. */
+/* Kurzer Weg in den Store, je nach Geraet: Android zu Google Play, iPhone/iPad
+   in den App Store, alle anderen sehen beide Knoepfe. referrer landet in der
+   Play Console, pt/ct in App Store Connect (Kampagnen). Absichtlich inline:
+   eine eigene Datei kann fehlschlagen, und dann faellt die Weiterleitung aus. */
 (function () {
-  var b = document.body;
-  var ziel = 'https://play.google.com/store/apps/details?id=com.yesta.app&referrer='
-    + encodeURIComponent('utm_source=' + (b.getAttribute('data-quelle') || 'direkt')
-      + '&utm_campaign=' + (b.getAttribute('data-kampagne') || 'start'));
-  var links = document.querySelectorAll('a.ziel');
-  for (var i = 0; i < links.length; i++) { links[i].href = ziel; }
-  if (/android/i.test(navigator.userAgent)) { location.replace(ziel); return; }
-  document.documentElement.setAttribute('data-kein-android', '');
+  var b = document.body, h = document.documentElement;
+  var quelle = b.getAttribute('data-quelle') || 'direkt';
+  var play = 'https://play.google.com/store/apps/details?id=com.yesta.app&referrer='
+    + encodeURIComponent('utm_source=' + quelle + '&utm_campaign=' + (b.getAttribute('data-kampagne') || 'start'));
+  var pt = b.getAttribute('data-apple-pt') || '';
+  var apple = 'https://apps.apple.com/app/id6823133458' + (pt ? '?pt=' + pt + '&ct=' + encodeURIComponent(quelle) + '&mt=8' : '');
+  var i, l = document.querySelectorAll('a.ziel-play');
+  for (i = 0; i < l.length; i++) { l[i].href = play; }
+  l = document.querySelectorAll('a.ziel-apple');
+  for (i = 0; i < l.length; i++) { l[i].href = apple; }
+  var ua = navigator.userAgent;
+  var ios = /iPhone|iPad|iPod/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1);
+  if (/android/i.test(ua)) { h.setAttribute('data-weiter', ''); location.replace(play); return; }
+  if (ios) { h.setAttribute('data-weiter', ''); location.replace(apple); return; }
+  h.setAttribute('data-beide', '');
 })();
 </script>
 </body>

@@ -188,6 +188,9 @@
   /* Seit dem 28.09.2026 ist die Kapsel der Weg in den Store, kein Hinweis mehr. */
   a.status { text-decoration: none; transition: border-color .2s ease; }
   a.status:hover, a.status:focus-visible { border-color: var(--coral-bright); }
+  /* Seit dem iPhone-Start zwei Kapseln nebeneinander, auf schmalen Schirmen untereinander. */
+  .stores { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: clamp(2.5rem, 6vw, 3.5rem); }
+  .stores .status { margin-top: 0; }
 
   /* ---------------- Abschnitte ---------------- */
 
@@ -409,7 +412,10 @@
       </p>
     </div>
 
-    <a class="status" href="https://play.google.com/store/apps/details?id=com.yesta.app&amp;referrer=utm_source%3Dwebsite%26utm_campaign%3Dstart"><span class="dot"></span> Jetzt im Play Store · kostenlos für Android</a>
+    <div class="stores">
+      <a class="status" href="https://play.google.com/store/apps/details?id=com.yesta.app&amp;referrer=utm_source%3Dwebsite%26utm_campaign%3Dstart"><span class="dot"></span> Google Play · für Android</a>
+      <a class="status" href="https://apps.apple.com/app/id6823133458?pt=129622336&amp;ct=website&amp;mt=8"><span class="dot"></span> App Store · fürs iPhone</a>
+    </div>
   </div>
 </header>
 
@@ -506,6 +512,8 @@
       Berechtigung <code>INTERNET</code> gar nicht erst an. Die App kann
       technisch keine Verbindung ins Netz aufbauen — sie funktioniert im
       Flugmodus genauso wie sonst.
+      Das iPhone kennt keine solche Berechtigung; die iPhone-Fassung enthält
+      dafür keinerlei Code, der eine Verbindung aufbaut.
     </p>
   </div>
 </section>
@@ -544,7 +552,7 @@
   <div class="inner">
     <div>
       <strong style="color:var(--ink-inverse)">Yesta</strong> — mehr als ein
-      Tagebuch. Für Android ab Version 10.
+      Tagebuch. Kostenlos für Android ab Version 10 und iPhone ab iOS 17.
     </div>
 
     <div class="foot-links">
