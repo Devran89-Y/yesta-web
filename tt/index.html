@@ -46,7 +46,7 @@
     <p>Falls nichts passiert:</p>
     <div class="knoepfe">
       <a class="knopf ziel-play" href="https://play.google.com/store/apps/details?id=com.yesta.app">Yesta bei Google Play</a>
-      <a class="knopf ziel-apple" href="https://apps.apple.com/app/id6823133458">Yesta im App Store</a>
+      <a class="knopf ziel-apple" href="https://apps.apple.com/de/app/id6823133458">Yesta im App Store</a>
     </div>
   </div>
   <div class="beide">
@@ -54,7 +54,7 @@
     <p>Kostenlos, ohne Konto und ohne Cloud – die App läuft ganz auf dem Handy.</p>
     <div class="knoepfe">
       <a class="knopf ziel-play" href="https://play.google.com/store/apps/details?id=com.yesta.app">Google Play (Android)</a>
-      <a class="knopf ziel-apple" href="https://apps.apple.com/app/id6823133458">App Store (iPhone)</a>
+      <a class="knopf ziel-apple" href="https://apps.apple.com/de/app/id6823133458">App Store (iPhone)</a>
     </div>
     <p><a class="leise" href="https://yesta.app/">Ansehen, worum es geht →</a></p>
   </div>
@@ -70,7 +70,7 @@
   var play = 'https://play.google.com/store/apps/details?id=com.yesta.app&referrer='
     + encodeURIComponent('utm_source=' + quelle + '&utm_campaign=' + (b.getAttribute('data-kampagne') || 'start'));
   var pt = b.getAttribute('data-apple-pt') || '';
-  var apple = 'https://apps.apple.com/app/id6823133458' + (pt ? '?pt=' + pt + '&ct=' + encodeURIComponent(quelle) + '&mt=8' : '');
+  var apple = 'https://apps.apple.com/de/app/id6823133458' + (pt ? '?pt=' + pt + '&ct=' + encodeURIComponent(quelle) + '&mt=8' : '');
   var i, l = document.querySelectorAll('a.ziel-play');
   for (i = 0; i < l.length; i++) { l[i].href = play; }
   l = document.querySelectorAll('a.ziel-apple');
