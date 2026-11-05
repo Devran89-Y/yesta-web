@@ -19,7 +19,7 @@
 <a class="back" href="index.html">← Yesta</a>
 
 <h1>Política de privacidad</h1>
-<p class="stand">Actualizada el 23 de octubre de 2026 · Se aplica a la app de Android Yesta a partir de la versión 1.32.0 y a la app para iPhone a partir de la 1.0.0 (apartado 6a); lo marcado como <em>desde 1.35.0</em>, <em>desde 1.38.0</em> o <em>desde 1.39.0</em> rige a partir de esa versión · <a href="../datenschutz.html" hreflang="de" lang="de">Deutsch</a> · <a href="../en/privacy.html" hreflang="en" lang="en">English</a></p>
+<p class="stand">Actualizada el 5 de noviembre de 2026 · Se aplica a la app de Android Yesta a partir de la versión 1.32.0 y a la app para iPhone a partir de la 1.0.0 (apartado 6a); lo marcado como <em>desde 1.35.0</em>, <em>desde 1.38.0</em>, <em>desde 1.39.0</em> o <em>desde 1.60.0</em> rige a partir de esa versión · <a href="../datenschutz.html" hreflang="de" lang="de">Deutsch</a> · <a href="../en/privacy.html" hreflang="en" lang="en">English</a></p>
 
 <div class="kasten">
   <p><strong>En resumen: Yesta no envía nada.</strong> La app ni siquiera pide
@@ -55,6 +55,7 @@ Correo: kontakt@yesta.app</div>
     <tr><td>Valoración por nitidez, exposición y colorido</td><td>calculado por Yesta en el dispositivo</td></tr>
     <tr><td><strong>Patrones faciales y grupos de personas</strong></td><td><strong>solo tras un consentimiento explícito</strong> — véase el apartado 2.1</td></tr>
     <tr><td>Etiquetas de lo que muestra una imagen («playa», «Navidad») con un valor de confianza</td><td>calculado por Yesta en el dispositivo</td></tr>
+    <tr><td><em>Desde 1.60.0 (iPhone desde 1.0.3):</em> un número por foto que indica si aparece una persona y si sale bien (sonrisa, ojos abiertos) — <strong>sin patrón facial</strong></td><td>calculado por Yesta en el dispositivo, solo sin consentimiento al reconocimiento de caras, ver apartado 2.1</td></tr>
     <tr><td>Copias reducidas de algunas tomas, para que las listas aparezcan rápido</td><td>creadas por Yesta en el dispositivo, en el directorio privado de la app, borrables en <em>Ajustes</em></td></tr>
     <tr><td>Nombre del lugar («Hamburgo, Alemania»)</td><td>véase el apartado 3</td></tr>
     <tr><td>Las notas que escribes sobre los días y sobre tomas concretas</td><td>lo que tú escribes</td></tr>
@@ -138,6 +139,13 @@ tratamiento anterior (artículo 7.3 del RGPD).</p>
 calendario, las notas, la búsqueda por texto, por fecha y por etiquetas. Solo
 falta la fila de personas en la búsqueda. <strong>Nada más en la app depende de
 tu consentimiento</strong> que la función misma.</p>
+
+<p><em>Desde 1.60.0 (iPhone desde 1.0.3):</em> para que la imagen del día muestre
+antes personas que objetos también sin consentimiento, Yesta mira en las posibles
+fotos de portada <strong>si</strong> se ve una cara y si sonríe. Solo se guarda un
+número por foto. <strong>No se crea ningún patrón facial</strong>, no se comparan
+fotos ni se forman grupos de personas: Yesta no sabe quién sale en la imagen.
+También esto ocurre solo en el dispositivo.</p>
 
 <h2>3. La única excepción: los nombres de lugar</h2>
 
@@ -413,8 +421,10 @@ concluyente:</p>
 <ol>
 <li><strong>Un patrón facial solo se crea tras un consentimiento
 explícito.</strong> Mientras la pregunta siga sin respuesta, o se haya
-respondido con un no, Yesta no busca caras y no crea ningún patrón — ni con
-retraso, ni en segundo plano, en absoluto.</li>
+respondido con un no, Yesta no crea ningún patrón — ni con retraso, ni en
+segundo plano, en absoluto. Hasta la 1.59.0 (iPhone 1.0.2) Yesta tampoco buscaba
+caras; desde la 1.60.0 (iPhone 1.0.3) solo mira si se ve alguna, sin patrón (ver
+«Si dices que no»).</li>
 
 <li><strong>En el proveedor no se crea ningún patrón facial.</strong> Los
 patrones existen únicamente en el dispositivo del usuario. El proveedor no

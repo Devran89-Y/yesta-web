@@ -19,7 +19,7 @@
 <a class="back" href="index.html">← Yesta</a>
 
 <h1>Datenschutzerklärung</h1>
-<p class="stand">Stand: 23. Oktober 2026 · Gilt für die Android-App Yesta ab Fassung 1.32.0 und die iPhone-App ab 1.0.0 (Abschnitt 6a); was mit <em>ab 1.35.0</em>, <em>ab 1.38.0</em> oder <em>ab 1.39.0</em> bezeichnet ist, gilt ab dieser Fassung · <a href="en/privacy.html" hreflang="en" lang="en">English</a> · <a href="es/privacidad.html" hreflang="es" lang="es">Español</a></p>
+<p class="stand">Stand: 5. November 2026 · Gilt für die Android-App Yesta ab Fassung 1.32.0 und die iPhone-App ab 1.0.0 (Abschnitt 6a); was mit <em>ab 1.35.0</em>, <em>ab 1.38.0</em>, <em>ab 1.39.0</em> oder <em>ab 1.60.0</em> bezeichnet ist, gilt ab dieser Fassung · <a href="en/privacy.html" hreflang="en" lang="en">English</a> · <a href="es/privacidad.html" hreflang="es" lang="es">Español</a></p>
 
 
 <div class="kasten">
@@ -57,6 +57,7 @@ Darin stehen:</p>
     <tr><td>Bewertung nach Schärfe, Belichtung, Farbigkeit</td><td>von Yesta auf dem Gerät berechnet</td></tr>
     <tr><td><strong>Gesichtsabdrücke und Personengruppen</strong></td><td><strong>nur nach ausdrücklicher Zusage</strong> — siehe Abschnitt 2.1</td></tr>
     <tr><td>Begriffe zu dem, was auf einem Bild zu sehen ist („Strand“, „Weihnachten“) samt Sicherheit</td><td>von Yesta auf dem Gerät berechnet</td></tr>
+    <tr><td><em>Ab 1.60.0 (iPhone ab 1.0.3):</em> eine Zahl je Foto, ob und wie gut getroffen ein Mensch darauf zu sehen ist (Lächeln, offene Augen) — <strong>kein Gesichtsabdruck</strong></td><td>von Yesta auf dem Gerät berechnet, nur ohne Zusage zur Gesichtserkennung, siehe Abschnitt 2.1</td></tr>
     <tr><td>Verkleinerte Kopien einzelner Aufnahmen, um Listen zügig anzuzeigen</td><td>von Yesta auf dem Gerät erzeugt, im privaten App-Verzeichnis, löschbar unter <em>Einstellungen</em></td></tr>
     <tr><td>Ortsname („Hamburg, Deutschland“)</td><td>siehe Abschnitt 3</td></tr>
     <tr><td>Selbst geschriebene Notizen zu Tagen und zu einzelnen Aufnahmen</td><td>Eingabe des Nutzers</td></tr>
@@ -142,6 +143,13 @@ seinem Zeitpunkt nicht (Art. 7 Abs. 3 DSGVO).</p>
 Kalender, Notizen, Suche nach Text, Datum und Begriffen. Es fehlt allein die
 Personenreihe in der Suche. <strong>Nichts in der App ist an die Zusage
 gekoppelt</strong>, außer der Funktion selbst.</p>
+
+<p><em>Ab 1.60.0 (iPhone ab 1.0.3):</em> Damit das Bild des Tages auch ohne Zusage
+eher Menschen zeigt als Gegenstände, sieht Yesta auf möglichen Titelbildern
+nach, <strong>ob</strong> ein Gesicht zu sehen ist und ob es lächelt. Gespeichert
+wird je Foto nur eine Zahl. Es entsteht <strong>kein Gesichtsabdruck</strong>, kein
+Vergleich zwischen Fotos und keine Personengruppe — wer auf dem Bild ist, weiß
+Yesta damit nicht. Auch das geschieht nur auf dem Gerät.</p>
 
 <h2>3. Die einzige Ausnahme: Ortsnamen</h2>
 
@@ -418,8 +426,10 @@ dort ebenfalls geleert werden können.</p>
 <ol>
 <li><strong>Ein Gesichtsabdruck entsteht erst nach einer ausdrücklichen
 Zusage.</strong> Solange die Frage unbeantwortet ist oder mit Nein beantwortet
-wurde, sucht Yesta keine Gesichter und erzeugt keinen Abdruck — nicht
-verzögert, nicht im Hintergrund, gar nicht.</li>
+wurde, erzeugt Yesta keinen Abdruck — nicht verzögert, nicht im Hintergrund,
+gar nicht. Bis 1.59.0 (iPhone 1.0.2) suchte Yesta dann auch keine Gesichter;
+ab 1.60.0 (iPhone 1.0.3) nur noch, ob überhaupt eines zu sehen ist, ohne
+Abdruck (siehe „Wenn nein“).</li>
 
 <li><strong>Beim Anbieter entsteht kein Gesichtsabdruck.</strong> Abdrücke
 liegen ausschließlich auf dem Gerät des Nutzers. Der Anbieter hat zu keinem

@@ -19,7 +19,7 @@
 <a class="back" href="index.html">← Yesta</a>
 
 <h1>Privacy policy</h1>
-<p class="stand">As of 23 October 2026 · Applies to the Android app Yesta from version 1.32.0 and the iPhone app from 1.0.0 (section 6a); anything marked <em>from 1.35.0</em>, <em>from 1.38.0</em> or <em>from 1.39.0</em> applies from that version · <a href="../datenschutz.html" hreflang="de" lang="de">Deutsch</a> · <a href="../es/privacidad.html" hreflang="es" lang="es">Español</a></p>
+<p class="stand">As of 5 November 2026 · Applies to the Android app Yesta from version 1.32.0 and the iPhone app from 1.0.0 (section 6a); anything marked <em>from 1.35.0</em>, <em>from 1.38.0</em>, <em>from 1.39.0</em> or <em>from 1.60.0</em> applies from that version · <a href="../datenschutz.html" hreflang="de" lang="de">Deutsch</a> · <a href="../es/privacidad.html" hreflang="es" lang="es">Español</a></p>
 
 <div class="kasten">
   <p><strong>In short: Yesta sends nothing.</strong> The app does not even
@@ -55,6 +55,7 @@ a database that exists only on the device. It contains:</p>
     <tr><td>Rating by sharpness, exposure, colourfulness</td><td>computed by Yesta on the device</td></tr>
     <tr><td><strong>Face prints and person groups</strong></td><td><strong>only after explicit consent</strong> — see section 2.1</td></tr>
     <tr><td>Labels for what a picture shows (“beach”, “Christmas”) with a confidence value</td><td>computed by Yesta on the device</td></tr>
+    <tr><td><em>From 1.60.0 (iPhone from 1.0.3):</em> one number per photo saying whether, and how well, a person is shown (smile, open eyes) — <strong>no face print</strong></td><td>computed by Yesta on the device, only without consent to face recognition, see section 2.1</td></tr>
     <tr><td>Scaled-down copies of individual shots, so lists appear quickly</td><td>created by Yesta on the device, in the private app directory, clearable under <em>Settings</em></td></tr>
     <tr><td>Place name (“Hamburg, Germany”)</td><td>see section 3</td></tr>
     <tr><td>Notes you write about days and about individual shots</td><td>your input</td></tr>
@@ -136,6 +137,13 @@ lawfulness of processing before it (Article 7(3) GDPR).</p>
 notes, search by text, date and labels. Only the row of people in search is
 missing. <strong>Nothing in the app is tied to your consent</strong> other than
 the feature itself.</p>
+
+<p><em>From 1.60.0 (iPhone from 1.0.3):</em> so that the picture of the day shows
+people rather than objects even without consent, Yesta checks on possible cover
+photos <strong>whether</strong> a face is visible and whether it smiles. Only one
+number per photo is stored. <strong>No face print</strong> is made, photos are not
+compared and no groups of people are formed — Yesta does not learn who is in the
+picture. This, too, happens only on the device.</p>
 
 <h2>3. The one exception: place names</h2>
 
@@ -401,9 +409,11 @@ cleared there.</p>
 
 <ol>
 <li><strong>A face print is only created after explicit consent.</strong> As
-long as the question is unanswered, or was answered with no, Yesta does not
-look for faces and creates no print — not delayed, not in the background, not
-at all.</li>
+long as the question is unanswered, or was answered with no, Yesta creates no
+print — not delayed, not in the background, not at all. Up to 1.59.0 (iPhone
+1.0.2) Yesta then did not look for faces either; from 1.60.0 (iPhone 1.0.3) it
+only checks whether one is visible at all, without a print (see “If you say
+no”).</li>
 
 <li><strong>No face print is ever created at the provider.</strong> Prints
 exist solely on the user's device. The provider has no access to them at any
