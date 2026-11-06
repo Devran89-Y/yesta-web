@@ -28,19 +28,19 @@
 <meta name="twitter:card" content="summary_large_image">
 <style>
   :root {
-    --ground:        #FFFCFA;
+    --ground:        #EDE0CF;
     --ground-deep:   #1B1512;
-    --surface:       #FFFFFF;
-    --ink:           #241B17;
-    --ink-muted:     #7C6A62;
+    --surface:       #FFFDF9;
+    --ink:           #59483A;
+    --ink-muted:     #8C6F56;
     --ink-inverse:   #F6EDE7;
-    --ink-inverse-muted: #B6A197;
-    --coral:         #E04A2C;
-    --coral-bright:  #FF7C5C;
-    --coral-wash:    #FBE9E3;
-    --teal:          #0E7C6B;
-    --teal-wash:     #DFF1ED;
-    --line:          #E7DCD5;
+    --ink-inverse-muted: #C8AE91;
+    --coral:         #59483A;
+    --coral-bright:  #C8AE91;
+    --coral-wash:    #DCC6AD;
+    --teal:          #8C6F56;
+    --teal-wash:     #E4D3BF;
+    --line:          #D8C6B0;
     --line-inverse:  #3A2E28;
 
     --sans: "Segoe UI Variable Display", "Segoe UI", system-ui, -apple-system,
@@ -57,10 +57,10 @@
       --surface:     #201A17;
       --ink:         #F4EBE5;
       --ink-muted:   #B09C92;
-      --coral:       #FF7C5C;
-      --coral-wash:  #35201A;
-      --teal:        #5FD3BE;
-      --teal-wash:   #14322D;
+      --coral:       #C8AE91;
+      --coral-wash:  #3A3026;
+      --teal:        #C8AE91;
+      --teal-wash:   #2E2822;
       --line:        #362C27;
     }
   }
@@ -145,9 +145,9 @@
     background: var(--teal-wash);
     border-radius: 14px;
     padding: 1.15rem 1.3rem 1.35rem;
-    color: #10322C;
+    color: #45372C;
   }
-  @media (prefers-color-scheme: dark) { .note-card { color: #D8F2EC; } }
+  @media (prefers-color-scheme: dark) { .note-card { color: #EDE0CF; } }
 
   .note-card .ask {
     font-size: 1.15rem;
@@ -159,7 +159,7 @@
   .note-card .written {
     margin: 0;
     font-size: 1.05rem;
-    border-top: 1px solid rgba(14, 124, 107, .25);
+    border-top: 1px solid rgba(140, 111, 86, .25);
     padding-top: .85rem;
   }
   .note-card .stamp {
@@ -363,7 +363,7 @@
   .schau img {
     display: block; width: 100%; max-width: 15rem; height: auto;
     border-radius: 1.4rem; border: 1px solid var(--line);
-    box-shadow: 0 1.25rem 2.5rem rgba(36, 27, 23, .14);
+    box-shadow: 0 1.25rem 2.5rem rgba(89, 72, 58, .14);
     background: var(--surface);
   }
   .schau figcaption {

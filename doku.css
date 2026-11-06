@@ -3,13 +3,13 @@
    diese hier sind Dokumente und dürfen ruhig aussehen. */
 
 :root {
-  --ground:     #FFFCFA;
-  --surface:    #FFFFFF;
-  --ink:        #241B17;
-  --ink-muted:  #7C6A62;
-  --coral:      #E04A2C;
-  --coral-wash: #FBE9E3;
-  --line:       #E7DCD5;
+  --ground:     #EDE0CF;
+  --surface:    #FFFDF9;
+  --ink:        #59483A;
+  --ink-muted:  #8C6F56;
+  --coral:      #59483A;
+  --coral-wash: #DCC6AD;
+  --line:       #D8C6B0;
 
   --sans: "Segoe UI Variable Text", "Segoe UI", system-ui, -apple-system,
           "Helvetica Neue", Arial, sans-serif;
@@ -22,8 +22,8 @@
     --surface:    #201A17;
     --ink:        #F4EBE5;
     --ink-muted:  #B09C92;
-    --coral:      #FF7C5C;
-    --coral-wash: #35201A;
+    --coral:      #C8AE91;
+    --coral-wash: #3A3026;
     --line:       #362C27;
   }
 }
